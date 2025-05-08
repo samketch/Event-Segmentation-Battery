@@ -1,0 +1,9 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.6.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[9613485, '1', '1', '1', '1', '001']
+Now initializing Movie Task
+Now setting up Movie Task
+Now running Movie Task
+Error: question_number 21 is out of range (1-12). Skipping question.
+8.5523 	WARNING 	Monitor specification not found. Creating a temporary one...
+12.7528 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.

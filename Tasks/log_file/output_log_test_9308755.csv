@@ -1,0 +1,15 @@
+METADATA:
+Experiment Seed,Probe 1 Version,Probe 2 Version,Probe 3 Version,Probe 4 Version,Subject
+9308755,1,1,1,1,test
+Time after setup,5.401163199916482
+Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID,Response_Key,Auxillary Data,Assoc Task
+ 
+Runtime Mod,15
+EXPERIMENT DATA:,Movie Task
+Start Time,9.430205299984664
+ 
+Runtime Mod,15
+EXPERIMENT DATA:,Movie Task
+Start Time,29.21417919988744
+ 
+Runtime Mod,15

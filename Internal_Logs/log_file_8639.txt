@@ -1,0 +1,13 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.6.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[4522532, '1', '1', '1', '1', 'test']
+Now initializing Movie Task
+Now setting up Movie Task
+Now running Movie Task
+Suspicious characters around position 1325:
+ repeatedl
+b'Line 9 contains invalid character:'
+b'"Why does Monica say \xc3\xa2\xe2\x82\xac\xc5\x93check\xc3\xa2\xe2\x82\xac\xef\xbf\xbd repeatedly while packing?", 1. "She is crossing off items on a list"| 2. "She is copying her childhood packing habits"| 3. "She is checking for broken items"| 4. "She is rewarding herself for remembering things", 4'
+8.5412 	WARNING 	Monitor specification not found. Creating a temporary one...
+12.7455 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.
+12.9198 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'pyo', 'pygame'] (in that order).

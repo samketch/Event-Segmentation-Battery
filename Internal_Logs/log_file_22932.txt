@@ -1,0 +1,15 @@
+[9744900, '1', '1', '1', '1', 'test']
+Now initializing Movie Task
+Now setting up Movie Task
+Now running Movie Task
+14.1678 	WARNING 	Monitor specification not found. Creating a temporary one...
+16.2183 	WARNING 	Couldn't measure a consistent frame rate.
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+16.3470 	WARNING 	t of last frame was 129.02ms (=1/7)
+17.6468 	WARNING 	t of last frame was 1299.76ms (=1/0)
+17.6801 	WARNING 	t of last frame was 33.35ms (=1/29)
+19.0474 	WARNING 	t of last frame was 1367.24ms (=1/0)
+21.2799 	WARNING 	Multiple dropped frames have occurred - I'll stop bothering you about them!
+21.9990 	WARNING 	avbin.dll failed to load. Try importing psychopy.visual as the first library (before anything that uses scipy) or use a differentmovie backend (e.g. moviepy).

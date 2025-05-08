@@ -1,0 +1,7 @@
+To summarize:
+
+Your job is to press the space bar anytime you see the scrambled image.
+HOWEVER, if the scrambled stimulus is **slanted**, do NOT respond. 
+
+Please respond as fast and accurately as possible.
+You will see an example on the next page.

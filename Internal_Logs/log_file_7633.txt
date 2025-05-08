@@ -1,0 +1,18 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.6.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[8481523, '1', '1', '1', '1', '001']
+Now initializing Movie Task
+Now setting up Movie Task
+Now running Movie Task
+8.0050 	WARNING 	Monitor specification not found. Creating a temporary one...
+9.9703 	WARNING 	Couldn't measure a consistent frame rate.
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+10.0678 	WARNING 	t of last frame was 97.71ms (=1/10)
+11.2834 	WARNING 	t of last frame was 1215.61ms (=1/0)
+11.3166 	WARNING 	t of last frame was 33.25ms (=1/30)
+12.5334 	WARNING 	t of last frame was 1216.75ms (=1/0)
+12.7837 	WARNING 	Multiple dropped frames have occurred - I'll stop bothering you about them!
+14.1051 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.
+14.3301 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'pyo', 'pygame'] (in that order).

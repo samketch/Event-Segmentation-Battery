@@ -1,0 +1,14 @@
+Just remember, you're
+checking if the current image
+is the same as the one
+2 IMAGES BACK. Like so:
+
+...2-BACK 1-BACK CURRENT
+
+LEFT if it's the same
+RIGHT if it's different
+
+Please try to answer
+as quickly as you can!
+
+Good luck!

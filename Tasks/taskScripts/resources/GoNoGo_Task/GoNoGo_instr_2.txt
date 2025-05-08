@@ -1,0 +1,2 @@
+Sometimes, the box around the scrambled images will be **more slanted than normal**.
+When this happens, you should NOT press the space bar. 

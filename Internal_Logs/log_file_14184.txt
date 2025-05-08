@@ -1,0 +1,15 @@
+[8798944, '1', '1', '1', '1', '001']
+Now initializing Movie Task
+Now setting up Movie Task
+Now running Movie Task
+1.2797 	WARNING 	Monitor specification not found. Creating a temporary one...
+17.1669 	WARNING 	Monitor specification not found. Creating a temporary one...
+20.6240 	WARNING 	Couldn't measure a consistent frame rate.
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+20.7604 	WARNING 	t of last frame was 136.60ms (=1/7)
+22.2869 	WARNING 	t of last frame was 1526.52ms (=1/0)
+22.3699 	WARNING 	t of last frame was 82.93ms (=1/12)
+23.8208 	WARNING 	t of last frame was 1450.91ms (=1/0)
+29.4038 	WARNING 	Multiple dropped frames have occurred - I'll stop bothering you about them!

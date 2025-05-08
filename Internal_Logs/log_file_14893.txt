@@ -1,0 +1,6 @@
+[6968668, '1', '1', '1', '1', 'test']
+Now initializing Movie Task
+Now setting up Movie Task
+Now running Movie Task
+12.6514 	WARNING 	Monitor specification not found. Creating a temporary one...
+17.5655 	WARNING 	avbin.dll failed to load. Try importing psychopy.visual as the first library (before anything that uses scipy) or use a differentmovie backend (e.g. moviepy).

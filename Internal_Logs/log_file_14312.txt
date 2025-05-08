@@ -1,0 +1,8 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.6.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[1055471, '1', '1', '1', '1', '001']
+Now initializing Movie Task
+Now setting up Movie Task
+Now running Movie Task
+7.4665 	WARNING 	Monitor specification not found. Creating a temporary one...
+11.5321 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.

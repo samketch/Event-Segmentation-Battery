@@ -1,0 +1,5 @@
+[3583198, '1', '1', '1', '1', 'test']
+Now initializing Movie Task
+Now setting up Movie Task
+Now running Movie Task
+12.0414 	WARNING 	Monitor specification not found. Creating a temporary one...

@@ -1,0 +1,36 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.6.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[9886898, '1', '1', '1', '1', '001']
+Now initializing Movie Task
+Now setting up Movie Task
+Now running Movie Task
+PTB-ERROR: Desired audio parameters for device -1 seem to be unsupported by audio device: Invalid sample rate 
+PTB-ERROR: Seems the requested audio sample rate 44100.000000 Hz is not supported by this combo of hardware and sound driver.
+Error in function Open: 	Usage error
+Failed to open PortAudio audio device due to unsupported combination of audio parameters. Prevalidation failure.
+PsychPortAudio:Open: Usage:
+
+pahandle = PsychPortAudio('Open' [, deviceid][, mode][, reqlatencyclass][, freq][, channels][, buffersize][, suggestedLatency][, selectchannels][, specialFlags=0]);
+PTB-ERROR: Desired audio parameters for device -1 seem to be unsupported by audio device: Invalid sample rate 
+PTB-ERROR: Seems the requested audio sample rate 44100.000000 Hz is not supported by this combo of hardware and sound driver.
+Error in function Open: 	Usage error
+Failed to open PortAudio audio device due to unsupported combination of audio parameters. Prevalidation failure.
+PsychPortAudio:Open: Usage:
+
+pahandle = PsychPortAudio('Open' [, deviceid][, mode][, reqlatencyclass][, freq][, channels][, buffersize][, suggestedLatency][, selectchannels][, specialFlags=0]);
+PTB-ERROR: Desired audio parameters for device -1 seem to be unsupported by audio device: Invalid sample rate 
+PTB-ERROR: Seems the requested audio sample rate 44100.000000 Hz is not supported by this combo of hardware and sound driver.
+Error in function Open: 	Usage error
+Failed to open PortAudio audio device due to unsupported combination of audio parameters. Prevalidation failure.
+PsychPortAudio:Open: Usage:
+
+pahandle = PsychPortAudio('Open' [, deviceid][, mode][, reqlatencyclass][, freq][, channels][, buffersize][, suggestedLatency][, selectchannels][, specialFlags=0]);
+PTB-ERROR: Desired audio parameters for device -1 seem to be unsupported by audio device: Invalid sample rate 
+PTB-ERROR: Seems the requested audio sample rate 44100.000000 Hz is not supported by this combo of hardware and sound driver.
+Error in function Open: 	Usage error
+Failed to open PortAudio audio device due to unsupported combination of audio parameters. Prevalidation failure.
+PsychPortAudio:Open: Usage:
+
+pahandle = PsychPortAudio('Open' [, deviceid][, mode][, reqlatencyclass][, freq][, channels][, buffersize][, suggestedLatency][, selectchannels][, specialFlags=0]);
+12.9268 	WARNING 	Monitor specification not found. Creating a temporary one...
+17.5622 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.

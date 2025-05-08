@@ -1,0 +1,11 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.6.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[6210873, '1', '1', '1', '1', 'test']
+Now initializing Movie Task
+Now setting up Movie Task
+Now running Movie Task
+Current seen responses: [{'idno': '1', 'videoname': 'test1.mp4', 'qnumber': 13, 'response': '1'}]
+saving seen responses [{'idno': '1', 'videoname': 'test1.mp4', 'qnumber': 13, 'response': '1'}]
+9.6199 	WARNING 	Monitor specification not found. Creating a temporary one...
+15.4677 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.
+15.6863 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'pyo', 'pygame'] (in that order).

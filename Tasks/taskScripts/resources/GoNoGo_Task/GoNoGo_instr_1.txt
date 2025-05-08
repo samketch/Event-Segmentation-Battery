@@ -1,0 +1,2 @@
+In this task, you will see scrambled images framed by a box.
+Your job is to **press the space bar** on the keyboard every time this happens.
