@@ -1,7 +1,0 @@
-[520459, '1', '1', '1', '1', 'test']
-Now initializing Movie Task
-Now setting up Movie Task
-Now running Movie Task
-13.6156 	WARNING 	Monitor specification not found. Creating a temporary one...
-18.1072 	WARNING 	The 'psychtoolbox' library cannot be loaded but is required for audio capture (use `pip install psychtoolbox` to get it). Microphone recording will be unavailable this session. Note that opening a microphone stream will raise an error.
-18.1084 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.

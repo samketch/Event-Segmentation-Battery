@@ -1,0 +1,21 @@
+METADATA:
+Experiment Seed,Probe 1 Version,Probe 2 Version,Probe 3 Version,Probe 4 Version,Subject
+4731227,1,1,1,1,test
+Time after setup,4.858255900035147
+Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID,Response_Key,Auxillary Data,Assoc Task
+ 
+Runtime Mod,-7
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,26.700068600010127
+ 
+Runtime Mod,-7
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,39.0809379000566
+ 
+Runtime Mod,-7
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,47.21263880003244
+ 
+Runtime Mod,-7
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,55.0289978000219

@@ -1,9 +1,0 @@
-pygame 2.6.1 (SDL 2.28.4, Python 3.6.13)
-Hello from the pygame community. https://www.pygame.org/contribute.html
-[6854324, '1', '1', '1', '1', 'test']
-Now initializing Movie Task
-Now setting up Movie Task
-Now running Movie Task
-Loading comprehension questions from: C:\Users\Smallwood Lab\Movie-Battery-Sam\Tasks\taskScripts/resources/Movie_Task/csv/comprehension_questions.csv
-11.2295 	WARNING 	Monitor specification not found. Creating a temporary one...
-15.7641 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.

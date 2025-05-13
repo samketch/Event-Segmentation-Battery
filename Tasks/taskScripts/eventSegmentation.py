@@ -184,26 +184,17 @@ def runexp(filename, timer, win, writer, resdict, runtime,dfile,seed,probever, p
     
 
     # user can update instructions for task here if required.
-    instructions =      """This experiment will require you to watch a set of 4 episodes of the TV series 'Friends'.
+    instructions =      """For the next phase of the experiment, you will watch a series of video clips.
 
-                    \nYou will not be able to pause or rewind. 
+While you watch the videos, please press the SPACE bar whenever you identify an EVENT BOUNDARY (the same way you have practiced earlier).
 
-                    \nDuring these videos, please listen carefully. There are volume keys on the keyboard to adjust to your liking. You will be asked a series of questions regarding the content of each movie afterwards. 
+In the videos you are about to watch, it is important to note that every scene change might not be an event boundary. However, sometimes and event boundary might occur during a scene (e.g. if one theme ends and another begins).
 
-                    \nPlease do not take any notes during the episodes. 
-
-                    \nPlease do not focus on another window, external devices or attend to other distractions. Do not close this window.
+Remember, an event boundary occurs where you perceive one event finishes and another begins.
 
                         """
-
-    # user can update start screen text here if required. 
-    start_screen = """Throughout each of the episodes, you will be prompted with questions about your thoughts.
-
-                    \nPlease answer these questions as quickly and honestly as possible. There are no right or wrong answers.
-
-                    \nUse the arrow keys and enter/return key to submit your response. 
-                    """
     
+
     # create text stimuli to be updated for start screen instructions.
     stim = visual.TextStim(win, "", color = [-1,-1,-1], wrapWidth = 1300, units = "pix", height=40)
 
@@ -215,13 +206,12 @@ def runexp(filename, timer, win, writer, resdict, runtime,dfile,seed,probever, p
     event.waitKeys(keyList=(['return']))
 
     # update text stim to include start screen for task. 
-    stim.setText(start_screen)
-    stim.draw()
-    win.flip()
+    #stim.setText(start_screen)
+    #stim.draw()
+    #win.flip()
     
     # Wait for user to press enter to continue. 
     event.waitKeys(keyList=(['return']))
-    
     
     
     # Create two lists, one with the control videos, and one with action videos
@@ -405,3 +395,78 @@ def runexp(filename, timer, win, writer, resdict, runtime,dfile,seed,probever, p
     
     
     return trialname
+
+
+#function to run the segmentation practice
+def run_practice(win):
+    
+    stim = visual.TextStim(win, "", color=[-1, -1, -1], wrapWidth=1300, units="pix", height=40)
+    practice_video_path = os.path.join(os.getcwd(), "taskScripts", "resources", "Movie_Task", "videos", "practice_clip.mp4")
+    min_required_presses = 3
+    max_attempts = 2
+    attempt_count = 0
+    passed = False
+
+    start_screen = """In the following experiment, you will watch a series of video clips. As you view the clips, please pay attention to the flow of events, specifically, please watch for natural breaks or transitions in the videos where you feel one event ends and another starts. 
+    
+                    \nThis 'gap' is commonly referred to as EVENT BOUNDARY. An event boundary occurs where you perceive one event finishes and another begins. We ask you to identify the event boundaries by pressing SPACE on your keyboard.
+
+                    \nThere are no right or wrong answers in this task; we are interested in your personal perception of when and where events transition.
+
+                    \nWe will first begin with a practice trial.
+                    """
+
+    stim.setText(start_screen)
+    stim.draw()
+    win.flip()
+    
+    # Wait for user to press enter to continue. 
+    event.waitKeys(keyList=(['return']))
+
+
+    while attempt_count < max_attempts and not passed:
+        stim.setText("""In the following practice phase, you will watch a short video, where there are several clear EVENT BOUNDARIES.
+
+Please press SPACE when you observe an event boundary.
+
+Remember, an event boundary occurs where you perceive one event finishes and another begins.""")
+        stim.draw()
+        win.flip()
+        event.waitKeys(keyList=['return'])
+
+        practice_mov = visual.MovieStim3(win, practice_video_path, size=(1920, 1080), flipVert=False, flipHoriz=False, loop=False)
+        clock = core.Clock()
+        boundaries = []
+
+        while practice_mov.status != visual.FINISHED:
+            practice_mov.draw()
+            win.flip()
+            keys = event.getKeys(timeStamped=clock)
+            for key, t in keys:
+                if key == 'space':
+                    boundaries.append(round(t, 3))
+
+        if len(boundaries) >= min_required_presses:
+            passed = True
+        else:
+            attempt_count += 1
+            if attempt_count < max_attempts:
+                retry = """It appears that you failed to identify some event boundaries in the first practice phase.
+
+Typically, participants identify about 3 or 4 event boundaries in this practice video.
+
+You now have the chance to try again."""
+            else:
+                retry = """Practice Fail 2
+
+You failed to identify adequate event boundaries in the practice phase.
+
+Please alert the experimenter."""
+                stim.setText(retry)
+                stim.draw()
+                win.flip()
+                event.waitKeys(keyList=['return'])
+                core.quit()
+
+
+

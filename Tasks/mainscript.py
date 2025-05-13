@@ -8,7 +8,7 @@ import time
 import csv
 
 import yaml
-from taskScripts import ESQ, movieTask
+from taskScripts import ESQ, movieTask, eventSegmentation
 import os
 import random
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
@@ -44,6 +44,9 @@ class metadatacollection():
                 metawriter.writerow(["METADATA:"])
                 metawriter.writerow(self.sbINFO.inputFieldNames)
                 metawriter.writerow(self.sbINFO.data)
+                metawriter.writerow(["Index", "Field Name", "Value"])
+                for idx, name in enumerate(self.sbINFO.inputFieldNames):
+                        metawriter.writerow([idx, name, self.sbINFO.data[idx]])
                 metawriter2.writerow(["METADATA:"])
                 metawriter2.writerow(self.sbINFO.inputFieldNames)
                 metawriter2.writerow(self.sbINFO.data)
@@ -83,11 +86,6 @@ class taskbattery(metadatacollection):
                 #for i in self.tasklist:
 
         def run_battery(self):
-                self.text.draw(self.win)
-                self.win.flip()
-                time.sleep(1)
-                event.waitKeys(keyList=['return'])
-                self.win.flip()
                 
                 
                 for en,i in enumerate(self.tasklist):
@@ -237,20 +235,20 @@ class task(taskbattery,metadatacollection):
                 writer2 = csv.DictWriter(fr, fieldnames=taskbattery.resultdict)
                 fre.writerow(["EXPERIMENT DATA:",self.name])
                 fre.writerow(["Start Time", taskbattery.time.getTime()])
-                taskbattery.resultdict = {'Timepoint': None, 'Time': None, 'Is_correct': None, 'Experience Sampling Question': None, 'Experience Sampling Response':None, 'Task' : self.name, 'Task Iteration': '1', 'Participant ID': self.trialclass[1], 'Response_Key' : None, 'Auxillary Data': None, 'Assoc Task':None}
+                taskbattery.resultdict = {'Timepoint': None, 'Time': None, 'Is_correct': None, 'Experience Sampling Question': None, 'Experience Sampling Response':None, 'Task' : self.name, 'Task Iteration': '1', 'Participant ID': self.trialclass[5], 'Response_Key' : None, 'Auxillary Data': None, 'Assoc Task':None}
                 if self.esq == False:
                         if self.ver == 1:
-                                dataver = self.task_module.runexp(self.backup_log_location, taskbattery.time, taskbattery.win, [writer,writer2], taskbattery.resultdict, self.runtime, self._ver_a_name, int(metacoll.INFO['Experiment Seed']),self.probever,self.trialclass[1])
+                                dataver = self.task_module.runexp(self.backup_log_location, taskbattery.time, taskbattery.win, [writer,writer2], taskbattery.resultdict, self.runtime, self._ver_a_name, int(metacoll.INFO['Experiment Seed']),self.probever,self.trialclass[5])
                         if self.ver == 2:
-                                dataver = self.task_module.runexp(self.backup_log_location, taskbattery.time, taskbattery.win, [writer,writer2], taskbattery.resultdict, self.runtime, self._ver_b_name, int(metacoll.INFO['Experiment Seed']),self.probever,self.trialclass[1])
+                                dataver = self.task_module.runexp(self.backup_log_location, taskbattery.time, taskbattery.win, [writer,writer2], taskbattery.resultdict, self.runtime, self._ver_b_name, int(metacoll.INFO['Experiment Seed']),self.probever,self.trialclass[5])
                         if self.ver == 3:
-                                dataver = self.task_module.runexp(self.backup_log_location, taskbattery.time, taskbattery.win, [writer,writer2], taskbattery.resultdict, self.runtime, self._ver_c_name, int(metacoll.INFO['Experiment Seed']),self.probever,self.trialclass[1])
+                                dataver = self.task_module.runexp(self.backup_log_location, taskbattery.time, taskbattery.win, [writer,writer2], taskbattery.resultdict, self.runtime, self._ver_c_name, int(metacoll.INFO['Experiment Seed']),self.probever,self.trialclass[5])
                         if self.ver == 4:
-                                dataver = self.task_module.runexp(self.backup_log_location, taskbattery.time, taskbattery.win, [writer,writer2], taskbattery.resultdict, self.runtime, self._ver_d_name, int(metacoll.INFO['Experiment Seed']),self.probever,self.trialclass[1])
+                                dataver = self.task_module.runexp(self.backup_log_location, taskbattery.time, taskbattery.win, [writer,writer2], taskbattery.resultdict, self.runtime, self._ver_d_name, int(metacoll.INFO['Experiment Seed']),self.probever,self.trialclass[5])
                 
                 if self.esq == True:
                         
-                        taskbattery.resultdict = {'Timepoint': None, 'Time': None, 'Is_correct': None, 'Experience Sampling Question': None, 'Experience Sampling Response':None, 'Task' : self.name, 'Task Iteration': '1', 'Participant ID': self.trialclass[1], 'Response_Key' : None, 'Auxillary Data': None, 'Assoc Task':taskbattery.prevname}
+                        taskbattery.resultdict = {'Timepoint': None, 'Time': None, 'Is_correct': None, 'Experience Sampling Question': None, 'Experience Sampling Response':None, 'Task' : self.name, 'Task Iteration': '1', 'Participant ID': self.trialclass[5], 'Response_Key' : None, 'Auxillary Data': None, 'Assoc Task':taskbattery.prevname}
                         self.task_module.runexp(self.backup_log_location, taskbattery.time, taskbattery.win, [writer,writer2], taskbattery.resultdict, self.runtime, None, int(metacoll.INFO['Experiment Seed']))
                         dataver = None
                 f.close()
@@ -368,10 +366,10 @@ if __name__ == "__main__":
         #random_probe_version = random.randint(1,10)
 
         # Defining each task as a task object
-        movieTask1 = task(movieTask, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/friends1.mp4"],"Movie Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 1,int(metacoll.INFO['Probe 1 Version']))
-        movieTask2 = task(movieTask, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/friends2.mp4"],"Movie Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 2,int(metacoll.INFO['Probe 2 Version']))
-        movieTask3 = task(movieTask, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/friends3.mp4"],"Movie Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 3,int(metacoll.INFO['Probe 3 Version']))
-        movieTask4 = task(movieTask, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/friends4.mp4"],"Movie Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 4,int(metacoll.INFO['Probe 4 Version']))
+        movieTask1 = task(eventSegmentation, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/test1.mp4"],"Event Segmentation Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 1,int(metacoll.INFO['Probe 1 Version']))
+        movieTask2 = task(eventSegmentation, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/test2.mp4"],"Event Segmentation Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 2,int(metacoll.INFO['Probe 2 Version']))
+        movieTask3 = task(eventSegmentation, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/test1.mp4"],"Event Segmentation Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 3,int(metacoll.INFO['Probe 3 Version']))
+        movieTask4 = task(eventSegmentation, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/test1.mp4"],"Event Segmentation Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 4,int(metacoll.INFO['Probe 4 Version']))
 
         #moviegroup = [movieTask1,movieTask2,movieTask3]
 
@@ -394,6 +392,14 @@ if __name__ == "__main__":
         tasks = fulltasklist
 
         tbt = taskbattery(tasks, ESQTask, INFO)
+
+        tbt.text.draw()
+        tbt.win.flip()
+        time.sleep(1)
+        event.waitKeys(keyList=['return'])
+        tbt.win.flip()
+
+        eventSegmentation.run_practice(tbt.win) #to run the practice before the battery
         
         tbt.run_battery()
         print("Success")

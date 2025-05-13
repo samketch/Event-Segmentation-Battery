@@ -1,7 +1,0 @@
-pygame 2.6.1 (SDL 2.28.4, Python 3.6.13)
-Hello from the pygame community. https://www.pygame.org/contribute.html
-[7895888, '1', '1', '1', '1', 'test']
-Now initializing Movie Task
-Now setting up Movie Task
-Now running Movie Task
-11.6475 	WARNING 	Monitor specification not found. Creating a temporary one...
