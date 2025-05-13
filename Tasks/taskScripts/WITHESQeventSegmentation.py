@@ -284,12 +284,12 @@ Remember, an event boundary occurs where you perceive one event finishes and ano
                 en += 1
                 mov.pause()
                 timepause = runtime - expClock.getTime()
-                #ESQ.runexp(None,timer,win,[writer,writera],resdict,None,None,None,movietype=trialname) 
+                ESQ.runexp(None,timer,win,[writer,writera],resdict,None,None,None,movietype=trialname) 
                 text_inst.draw()
                 win.flip()
                 #mov.draw()
-                #writera.writerow({'Timepoint':'EXPERIMENT DATA:','Time':'Experience Sampling Questions'})
-                #writera.writerow({'Timepoint':'Start Time','Time':timer.getTime()})
+                writera.writerow({'Timepoint':'EXPERIMENT DATA:','Time':'Experience Sampling Questions'})
+                writera.writerow({'Timepoint':'Start Time','Time':timer.getTime()})
                 resdict['Assoc Task'] = None
                 resdict['Timepoint'], resdict['Time'],resdict['Auxillary Data'] = 'Movie prompt {} {}'.format(en,videoname), timer.getTime(), timelimitpercent
                 writer.writerow(resdict)
