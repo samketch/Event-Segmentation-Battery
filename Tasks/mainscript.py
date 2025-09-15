@@ -73,7 +73,7 @@ class taskbattery(metadatacollection):
                 taskbattery.ESQtask = ESQtask
                 self.INFO = INFO
                 self.taskexeclist = []
-                self.win = visual.Window(size=(1440, 960),color='white',fullscr=False)
+                self.win = visual.Window(size=(1440, 960),color='white',fullscr=True)
                 self.text = text_2 = visual.TextStim(win=self.win, name='text_2',
                         text='Welcome to our experiment. \n Please follow the instructions on-screen and notify the attending researcher if anything is unclear \n We are thankful for your participation. \n Press <return/enter> to continue.',
                         font='Arial',
