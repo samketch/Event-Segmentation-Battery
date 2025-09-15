@@ -22,6 +22,7 @@ from psychopy import prefs
 def save_comp_csv(responses_data, participant_id, clipname, seed):
     current_directory = os.path.dirname(os.path.abspath(__file__))
     log_folder = os.path.join(current_directory, "..", "comp_file")
+    os.makedirs(log_folder, exist_ok=True)  # make sure folder exists
 
     current_datetime = datetime.now().strftime("%Y_%m_%d-%p%I_%M_%S")
         
@@ -32,6 +33,7 @@ def save_comp_csv(responses_data, participant_id, clipname, seed):
         csv_writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         csv_writer.writeheader()
         csv_writer.writerows(responses_data)
+
 
 def present_comprehension_question(win, stim, question_number, participant_id, videoname, responses_data):
     current_directory = os.path.dirname(os.path.abspath(__file__))
