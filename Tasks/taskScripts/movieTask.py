@@ -43,7 +43,7 @@ def present_comprehension_question(win, stim, question_number, participant_id, v
                 print(f"Line {lineno}: {line.strip()}")
 
     # Load questions from the CSV file
-    with open(questions_file_path, 'r', errors='replace') as csv_file:
+    with open(questions_file_path, 'r', encoding='utf-8') as csv_file:
         csv_reader = csv.DictReader(csv_file)
         questions = list(csv_reader)
 

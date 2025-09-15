@@ -281,12 +281,12 @@ Remember, an event boundary occurs where you perceive one event finishes and ano
                 except:
                     timelimit = 10000
                     pass
-                en += 1
-                mov.pause()
-                timepause = runtime - expClock.getTime()
+                #en += 1
+                #mov.pause()
+                #timepause = runtime - expClock.getTime()
                 #ESQ.runexp(None,timer,win,[writer,writera],resdict,None,None,None,movietype=trialname) 
-                text_inst.draw()
-                win.flip()
+                #text_inst.draw()
+                #win.flip()
                 #mov.draw()
                 writera.writerow({'Timepoint':'EXPERIMENT DATA:','Time':'Experience Sampling Questions'})
                 writera.writerow({'Timepoint':'Start Time','Time':timer.getTime()})
@@ -295,7 +295,7 @@ Remember, an event boundary occurs where you perceive one event finishes and ano
                 writer.writerow(resdict)
                 resdict['Timepoint'], resdict['Time'],resdict['Auxillary Data'] = None,None,None
                 #win.flip()
-                mov.play()
+                #mov.play()
                 resettime = True
                 
                 #runtime = timepause
