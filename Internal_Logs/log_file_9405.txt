@@ -1,0 +1,52 @@
+pygame 2.1.2 (SDL 2.0.18, Python 3.6.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[7777076, '121212']
+First movie: 500Days.mp4
+PreFA cue: LOVE | PostFA cue: ROMANCE
+Starting Free Association Task (before movies)...
+[SAVED] Free association data saved to C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Tasks\free_association\121212_freeAssoc_20251026_174052.csv
+Now initializing Event Segmentation Task
+Now setting up Event Segmentation Task
+Now running Event Segmentation Task
+[DEBUG] Key: space, Timestamp: 43.19914480007719, Movie status: 1, Clock time: 43.199289400014095
+[DEBUG] Key: space, Timestamp: 98.4262392000528, Movie status: 1, Clock time: 98.42635449999943
+[DEBUG] Key: space, Timestamp: 358.4682189000305, Movie status: 1, Clock time: 358.4683544000145
+[DEBUG] Key: space, Timestamp: 598.847055100021, Movie status: 1, Clock time: 598.8579831999959
+[DEBUG] Key: space, Timestamp: 657.40405500005, Movie status: 1, Clock time: 657.4041810999624
+Now initializing Event Segmentation Task
+Now setting up Event Segmentation Task
+Now running Event Segmentation Task
+[DEBUG] Key: space, Timestamp: 2.8041363999946043, Movie status: 1, Clock time: 2.8168108999961987
+[DEBUG] Key: space, Timestamp: 2.9660524999490008, Movie status: 1, Clock time: 2.9661671000067145
+[DEBUG] Key: space, Timestamp: 98.09084229997825, Movie status: 1, Clock time: 98.09146019991022
+[DEBUG] Key: space, Timestamp: 471.27244999993127, Movie status: 1, Clock time: 471.2725797999883
+Starting Free Association Task (after movies)...
+[SAVED] Free association data saved to C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Tasks\free_association\121212_freeAssoc_20251026_180330.csv
+Starting Lingering Self-Report (after movies)...
+Saved lingering response to C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Tasks\lingering_response\121212_500Days.mp4_linger.csv
+Success
+7.0889 	WARNING 	Monitor specification not found. Creating a temporary one...
+29.7042 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.
+29.7484 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'pyo', 'pygame'] (in that order).
+78.9429 	WARNING 	45.071702066692524: Video catchup needed, advancing self._nextFrameT from 44.933333333333344 to 44.966666666666676
+78.9429 	WARNING 	45.071733166696504: Video catchup needed, advancing self._nextFrameT from 44.966666666666676 to 45.00000000000001
+78.9429 	WARNING 	45.07174656668212: Video catchup needed, advancing self._nextFrameT from 45.00000000000001 to 45.03333333333334
+379.0229 	WARNING 	345.15176696667913: Video catchup needed, advancing self._nextFrameT from 345.0333333333922 to 345.06666666672555
+379.0230 	WARNING 	345.1518213666277: Video catchup needed, advancing self._nextFrameT from 345.06666666672555 to 345.1000000000589
+439.0601 	WARNING 	405.1889516665833: Video catchup needed, advancing self._nextFrameT from 405.0666666667733 to 405.10000000010666
+439.0602 	WARNING 	405.18906336661894: Video catchup needed, advancing self._nextFrameT from 405.10000000010666 to 405.13333333344
+646.9480 	WARNING 	613.0768237666925: Video catchup needed, advancing self._nextFrameT from 613.0000000000998 to 613.0333333334331
+647.0137 	WARNING 	613.1425690666074: Video catchup needed, advancing self._nextFrameT from 613.0666666667664 to 613.1000000000997
+647.2752 	WARNING 	613.4040278666653: Video catchup needed, advancing self._nextFrameT from 613.3333333334328 to 613.3666666667662
+647.2752 	WARNING 	Max reportNDroppedFrames reached, will not log any more dropped frames
+775.5365 	WARNING 	74.21642516669817: Video catchup needed, advancing self._nextFrameT from 74.13333333333169 to 74.16666666666502
+830.3551 	WARNING 	129.03504746675026: Video catchup needed, advancing self._nextFrameT from 128.96666666666192 to 128.99999999999525
+838.1571 	WARNING 	136.83705686673056: Video catchup needed, advancing self._nextFrameT from 136.76666666666148 to 136.7999999999948
+858.9264 	WARNING 	157.60627686674707: Video catchup needed, advancing self._nextFrameT from 157.49999999999363 to 157.53333333332696
+858.9264 	WARNING 	157.60630856675562: Video catchup needed, advancing self._nextFrameT from 157.53333333332696 to 157.5666666666603
+859.0975 	WARNING 	157.77739166666288: Video catchup needed, advancing self._nextFrameT from 157.6666666666603 to 157.69999999999362
+859.0975 	WARNING 	157.7774226666661: Video catchup needed, advancing self._nextFrameT from 157.69999999999362 to 157.73333333332695
+859.1611 	WARNING 	157.840967666707: Video catchup needed, advancing self._nextFrameT from 157.76666666666029 to 157.79999999999362
+928.5893 	WARNING 	227.26921856671106: Video catchup needed, advancing self._nextFrameT from 227.19999999998967 to 227.233333333323
+1039.0728 	WARNING 	337.75268886669073: Video catchup needed, advancing self._nextFrameT from 337.6333333333863 to 337.66666666671966
+1039.0729 	WARNING 	Max reportNDroppedFrames reached, will not log any more dropped frames

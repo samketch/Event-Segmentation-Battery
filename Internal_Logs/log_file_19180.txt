@@ -1,0 +1,8 @@
+pygame 2.1.2 (SDL 2.0.18, Python 3.6.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[8123966, '001']
+90.3786 	WARNING 	Monitor specification not found. Creating a temporary one...
+90.3857 	WARNING 	User requested fullscreen with size [1440  960], but screen is actually [2560, 1440]. Using actual size
+129.2695 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.
+129.3444 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'pyo', 'pygame'] (in that order).
+160.3209 	WARNING 	29.819735566619784: Video catchup needed, advancing self._nextFrameT from 29.696333333333147 to 29.73804166666648

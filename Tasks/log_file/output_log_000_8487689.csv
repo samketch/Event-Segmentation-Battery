@@ -1,11 +1,5 @@
 METADATA:
 Experiment Seed,Subject
-3641406,09090909
-Time after setup,4.030426499986788
+8487689,000
+Time after setup,2.978220000048168
 Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID,Response_Key,Auxillary Data,Assoc Task
- 
-Runtime Mod,-10
-EXPERIMENT DATA:,Event Segmentation Task
-Start Time,18.45804450000287
- 
-Runtime Mod,12
