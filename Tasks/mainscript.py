@@ -420,7 +420,8 @@ if __name__ == "__main__":
          }
         
         random.shuffle(moviegroup) #just trying to shuffle the video clips 
-        moviegroup = moviegroup[0:2]
+
+        print(moviegroup)
 
         
         
@@ -474,7 +475,7 @@ if __name__ == "__main__":
                 tbt.win,
                 participant_id=metacoll.INFO['Subject'],
                 cue_word=cue_pre,
-                duration=10,  # 5 min
+                duration=300,  # 5 min
                 VideoName=first_video_name
         )
         freeAssoc.save_association(
@@ -494,7 +495,7 @@ if __name__ == "__main__":
                 tbt.win,
                 participant_id=metacoll.INFO['Subject'],
                 cue_word=cue_post,
-                duration=10,  # 5 min
+                duration=300,  # 5 min
                 VideoName=first_video_name
         )
         freeAssoc.save_association(
