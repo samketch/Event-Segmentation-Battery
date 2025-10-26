@@ -1,7 +1,0 @@
-pygame 2.6.1 (SDL 2.28.4, Python 3.6.13)
-Hello from the pygame community. https://www.pygame.org/contribute.html
-[3087876, '123456']
-First movie: prestige.mp4
-PreFA cue: BREAKUP | PostFA cue: MAGIC
-Starting Free Association Task (before movies)...
-10.8764 	WARNING 	Monitor specification not found. Creating a temporary one...

@@ -23,7 +23,6 @@ def show_instructions(win):
         "We are interested in the associations you have between words.\n\n"
         "Please feel free to type any words that come to mind.\n\n"
         "Do not form sentences. Instead, please use individual words to form your word chain.\n\n"
-        "Press SPACE to continue."
         "Press ENTER to begin."
     )
 
