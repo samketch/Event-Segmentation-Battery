@@ -109,9 +109,12 @@ def runexp(win, participant_id="TEST", VideoName="test_video"):
 # ----------------------------------------------------------
 # 3. Save Function
 # ----------------------------------------------------------
-def save_response(response_dict, participant_id, VideoName, save_dir=r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Tasks\lingering_response"):
-    """Save the response to CSV."""
+def save_response(response_dict, participant_id, VideoName):
+    """Save the response to a local folder (relative to script)."""
+    current_directory = os.path.dirname(os.path.abspath(__file__))
+    save_dir = os.path.join(current_directory, "..", "lingering_response")
     os.makedirs(save_dir, exist_ok=True)
+
     outfile = os.path.join(save_dir, f"{participant_id}_{VideoName}_linger.csv")
 
     with open(outfile, "w", newline="") as f:
@@ -124,7 +127,7 @@ def save_response(response_dict, participant_id, VideoName, save_dir=r"C:\Users\
             response_dict["RT"]
         ])
 
-    print(f"Saved lingering response to {outfile}")
+    print(f"[SAVED] Lingering response saved to: {outfile}")
 
 
 # ----------------------------------------------------------

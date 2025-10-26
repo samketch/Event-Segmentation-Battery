@@ -1,13 +1,15 @@
 # free_association_task_equivalent.py
 # Python/PsychoPy equivalent of EvoPsyc (jsPsych) free association task
 
-from psychopy import visual, event, core
 import os, csv
 from datetime import datetime
+from psychopy import visual, event, core
 
-SAVE_DIR = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Tasks\free_association"
-
+# Define save directory relative to this script
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+SAVE_DIR = os.path.join(BASE_DIR, "..", "free_association")
 os.makedirs(SAVE_DIR, exist_ok=True)
+
 
 
 def show_instructions(win):
