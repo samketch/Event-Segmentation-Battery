@@ -1,0 +1,44 @@
+pygame 2.6.1 (SDL 2.28.4, Python 3.6.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[9863789, '090909']
+First movie: lms.mp4
+PreFA cue: WEDDING | PostFA cue: FRIENDSHIP
+Starting Free Association Task (before movies)...
+[SAVED] Free association data saved to C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Tasks\free_association\090909_freeAssoc_20251022_175619.csv
+Now initializing Event Segmentation Task
+Now setting up Event Segmentation Task
+Now running Event Segmentation Task
+[DEBUG] Key: return, Timestamp: -0.0124884000106249, Movie status: 1, Clock time: 0.016076999992947094
+[DEBUG] Key: space, Timestamp: 1.9152449999965029, Movie status: 1, Clock time: 1.931434199999785
+[DEBUG] Key: space, Timestamp: 173.37336429998686, Movie status: 1, Clock time: 173.37858119999873
+[DEBUG] Key: space, Timestamp: 289.76110289999633, Movie status: 1, Clock time: 289.7612836999906
+[DEBUG] Key: space, Timestamp: 479.9603561999975, Movie status: 1, Clock time: 479.9608240999951
+Now initializing Event Segmentation Task
+Now setting up Event Segmentation Task
+Now running Event Segmentation Task
+[DEBUG] Key: space, Timestamp: 91.09948630000872, Movie status: 1, Clock time: 91.09990390000166
+[DEBUG] Key: space, Timestamp: 154.68211120000342, Movie status: 1, Clock time: 154.68228980001004
+[DEBUG] Key: space, Timestamp: 202.83082010000362, Movie status: 1, Clock time: 202.83104699999967
+[DEBUG] Key: space, Timestamp: 240.93996950000292, Movie status: 1, Clock time: 240.94667220000701
+[DEBUG] Key: space, Timestamp: 273.08018560000346, Movie status: 1, Clock time: 273.0803808000055
+[DEBUG] Key: space, Timestamp: 418.87375600000087, Movie status: 1, Clock time: 418.89352890000737
+[DEBUG] Key: space, Timestamp: 497.8760544000106, Movie status: 1, Clock time: 497.8763217000087
+[DEBUG] Key: space, Timestamp: 607.8072422000114, Movie status: 1, Clock time: 607.8075788999995
+Starting Free Association Task (after movies)...
+[SAVED] Free association data saved to C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Tasks\free_association\090909_freeAssoc_20251022_181852.csv
+Starting Lingering Self-Report (after movies)...
+Saved lingering response to data\090909_lms.mp4_linger.csv
+Success
+7.3015 	WARNING 	Monitor specification not found. Creating a temporary one...
+29.1476 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'pyo', 'pygame'] (in that order).
+735.3125 	WARNING 	33.71800656666164: Video catchup needed, advancing self._nextFrameT from 33.600000000000655 to 33.63333333333399
+735.3126 	WARNING 	33.71807246665412: Video catchup needed, advancing self._nextFrameT from 33.63333333333399 to 33.66666666666732
+735.4110 	WARNING 	33.816465666663134: Video catchup needed, advancing self._nextFrameT from 33.70000000000065 to 33.73333333333398
+735.4110 	WARNING 	33.816535366655444: Video catchup needed, advancing self._nextFrameT from 33.73333333333398 to 33.76666666666731
+735.4777 	WARNING 	33.88311886666634: Video catchup needed, advancing self._nextFrameT from 33.800000000000644 to 33.833333333333975
+763.5610 	WARNING 	61.96649926666578: Video catchup needed, advancing self._nextFrameT from 61.866666666665715 to 61.89999999999905
+763.6106 	WARNING 	62.01608276665502: Video catchup needed, advancing self._nextFrameT from 61.93333333333238 to 61.96666666666571
+763.6617 	WARNING 	62.067114966659574: Video catchup needed, advancing self._nextFrameT from 61.99999999999904 to 62.03333333333237
+1302.3225 	WARNING 	600.7280237666564: Video catchup needed, advancing self._nextFrameT from 600.5666666667778 to 600.6000000001111
+1302.3226 	WARNING 	600.7280916666641: Video catchup needed, advancing self._nextFrameT from 600.6000000001111 to 600.6333333334444
+1302.3226 	WARNING 	Max reportNDroppedFrames reached, will not log any more dropped frames

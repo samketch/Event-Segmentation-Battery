@@ -1,0 +1,72 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import pearsonr
+import os
+import glob
+
+# =========================
+# Config
+# =========================
+SEMANTIC_DIR = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\Analyzed_Data\Semantics"
+KDE_DIR      = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\Analyzed_Data\Kernal\KDE_Results"
+VIDEO_DURATION = 22 * 60  # 22 minutes
+# =========================
+
+# --- Find semantic files ---
+semantic_files = glob.glob(os.path.join(SEMANTIC_DIR, "*_aligned_semantic.csv"))
+
+for sem_file in semantic_files:
+    base = os.path.basename(sem_file)
+    video_id = base.split("_")[0]   # e.g., "friends1"
+
+    # Match KDE file
+    kde_file = os.path.join(KDE_DIR, f"{video_id}_kde_timeseries.csv")
+    if not os.path.exists(kde_file):
+        print(f"⚠️ Skipping {video_id}: KDE file not found at {kde_file}")
+        continue
+
+    print(f"Processing {video_id} …")
+
+    # --- Load semantic data ---
+    sem = pd.read_csv(sem_file)
+    sem_time = pd.to_numeric(sem["time"], errors="coerce").values
+    sem_shift = 1 - pd.to_numeric(sem["similarity_prev"], errors="coerce").fillna(1).values
+
+    # --- Load KDE density data ---
+    kde = pd.read_csv(kde_file)
+    kde_time = pd.to_numeric(kde["Time(s)"], errors="coerce").values
+    kde_density = pd.to_numeric(kde["Density"], errors="coerce").values
+
+    # --- Common time axis (1s bins) ---
+    t = np.arange(0, VIDEO_DURATION+1, 1)
+
+    # Interpolate both signals
+    sem_interp = np.interp(t, sem_time, sem_shift)
+    kde_interp = np.interp(t, kde_time, kde_density)
+
+    # --- Normalize (z-score) ---
+    sem_z = (sem_interp - sem_interp.mean()) / sem_interp.std()
+    kde_z = (kde_interp - kde_interp.mean()) / kde_interp.std()
+
+    # --- Correlation ---
+    r, p = pearsonr(sem_z, kde_z)
+    print(f"{video_id}: r={r:.3f}, p={p:.5f}")
+
+    # --- Plot ---
+    plt.figure(figsize=(12,5))
+    plt.plot(t, sem_z, label="Semantic shift (1 - similarity)", alpha=0.8)
+    plt.plot(t, kde_z, label="KDE boundary density", alpha=0.8)
+    plt.xlabel("Time (s)")
+    plt.ylabel("Z-scored value")
+    plt.title(f"{video_id}: Semantic vs Event Segmentation (r={r:.2f}, p={p:.3g})")
+    plt.legend()
+    plt.tight_layout()
+
+    # Save plot next to semantic file
+    out_fig = os.path.splitext(sem_file)[0] + "_correlation.png"
+    plt.savefig(out_fig)
+    plt.close()
+    print(f"Saved plot: {out_fig}")
+
+print("✅ Done with all videos!")

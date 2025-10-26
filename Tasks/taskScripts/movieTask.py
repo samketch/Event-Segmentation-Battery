@@ -323,7 +323,8 @@ def runexp(filename, timer, win, writer, resdict, runtime,dfile,seed,probever, p
             break
 
     #at the end of each clip, present comprehension questions
-    if filename[1] == "resources/Movie_Task/videos/prestige.mp4":
+    video_basename = os.path.basename(filename[1])  # e.g., "c4.mp4"
+    if video_basename == "prestige.mp4":
         base_name = os.path.splitext(os.path.basename(filename[1]))[0]
         clipname = base_name.split('.')[0]
         responses_data = present_comprehension_question(win, stim, 1, participant_id, videoname, responses_data)
@@ -335,7 +336,7 @@ def runexp(filename, timer, win, writer, resdict, runtime,dfile,seed,probever, p
         save_seen_csv(seen_data, participant_id, clipname, seed)
         #core.quit() #use this to debug
 
-    if filename[1] == "resources/Movie_Task/videos/pulpFiction.mp4":
+    if video_basename == "pulpFiction.mp4":
         base_name = os.path.splitext(os.path.basename(filename[1]))[0]
         clipname = base_name.split('.')[0]
         responses_data = present_comprehension_question(win, stim, 5, participant_id, videoname, responses_data)
@@ -346,7 +347,7 @@ def runexp(filename, timer, win, writer, resdict, runtime,dfile,seed,probever, p
         seen_data = present_seen_question(win, stim, 34, participant_id, videoname, seen_data)
         save_seen_csv(seen_data, participant_id, clipname, seed)
     
-    if filename[1] == "resources/Movie_Task/videos/shawshank.mp4":
+    if video_basename == "shawshank.mp4":
         base_name = os.path.splitext(os.path.basename(filename[1]))[0]
         clipname = base_name.split('.')[0]
         responses_data = present_comprehension_question(win, stim, 9, participant_id, videoname, responses_data)
@@ -357,7 +358,7 @@ def runexp(filename, timer, win, writer, resdict, runtime,dfile,seed,probever, p
         seen_data = present_seen_question(win, stim, 35, participant_id, videoname, seen_data)
         save_seen_csv(seen_data, participant_id, clipname, seed)
     
-    if filename[1] == "resources/Movie_Task/videos/backToFuture.mp4":
+    if video_basename == "backToFuture.mp4":
         base_name = os.path.splitext(os.path.basename(filename[1]))[0]
         clipname = base_name.split('.')[0]
         responses_data = present_comprehension_question(win, stim, 13, participant_id, videoname, responses_data)
@@ -368,7 +369,7 @@ def runexp(filename, timer, win, writer, resdict, runtime,dfile,seed,probever, p
         seen_data = present_seen_question(win, stim, 36, participant_id, videoname, seen_data)
         save_seen_csv(seen_data, participant_id, clipname, seed)
 
-    if filename[1] == "resources/Movie_Task/videos/12_years.mp4":
+    if video_basename == "12_years.mp4":
         base_name = os.path.splitext(os.path.basename(filename[1]))[0]
         clipname = base_name.split('.')[0]
         responses_data = present_comprehension_question(win, stim, 17, participant_id, videoname, responses_data)
@@ -379,7 +380,7 @@ def runexp(filename, timer, win, writer, resdict, runtime,dfile,seed,probever, p
         seen_data = present_seen_question(win, stim, 37, participant_id, videoname, seen_data)
         save_seen_csv(seen_data, participant_id, clipname, seed)
     
-    if filename[1] == "resources/Movie_Task/videos/lms.mp4":
+    if video_basename == "lms.mp4":
         base_name = os.path.splitext(os.path.basename(filename[1]))[0]
         clipname = base_name.split('.')[0]
         responses_data = present_comprehension_question(win, stim, 21, participant_id, videoname, responses_data)
@@ -390,7 +391,7 @@ def runexp(filename, timer, win, writer, resdict, runtime,dfile,seed,probever, p
         seen_data = present_seen_question(win, stim, 38, participant_id, videoname, seen_data)
         save_seen_csv(seen_data, participant_id, clipname, seed)
 
-    if filename[1] == "resources/Movie_Task/videos/c4.mp4":
+    if video_basename == "c4.mp4":
         base_name = os.path.splitext(os.path.basename(filename[1]))[0]
         clipname = base_name.split('.')[0]
         responses_data = present_comprehension_question(win, stim, 25, participant_id, videoname, responses_data)
@@ -401,7 +402,7 @@ def runexp(filename, timer, win, writer, resdict, runtime,dfile,seed,probever, p
         seen_data = present_seen_question(win, stim, 39, participant_id, videoname, seen_data)
         save_seen_csv(seen_data, participant_id, clipname, seed)
     
-    if filename[1] == "resources/Movie_Task/videos/500Days.mp4":
+    if video_basename == "500Days.mp4":
         base_name = os.path.splitext(os.path.basename(filename[1]))[0]
         clipname = base_name.split('.')[0]
         responses_data = present_comprehension_question(win, stim, 29, participant_id, videoname, responses_data)
@@ -416,43 +417,43 @@ def runexp(filename, timer, win, writer, resdict, runtime,dfile,seed,probever, p
     event_seg_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "event_seg")
     os.makedirs(event_seg_dir, exist_ok=True)
 
-    if filename[1] == "resources/Movie_Task/videos/prestige.mp4":
+    if video_basename == "prestige.mp4":
         base_name = os.path.splitext(os.path.basename(filename[1]))[0]
         clipname = base_name.split('.')[0]
         # Save event boundary data
         save_eventseg_csv(boundary_times, participant_id, clipname, seed)
 
-    if filename[1] == "resources/Movie_Task/videos/pulpFiction.mp4":
+    if video_basename == "pulpFiction.mp4":
         base_name = os.path.splitext(os.path.basename(filename[1]))[0]
         clipname = base_name.split('.')[0]
         save_eventseg_csv(boundary_times, participant_id, clipname, seed)
 
-    if filename[1] == "resources/Movie_Task/videos/shawshank.mp4":
+    if video_basename == "shawshank.mp4":
         base_name = os.path.splitext(os.path.basename(filename[1]))[0]
         clipname = base_name.split('.')[0]
         save_eventseg_csv(boundary_times, participant_id, clipname, seed)
 
-    if filename[1] == "resources/Movie_Task/videos/backToFuture.mp4":
+    if video_basename == "backToFuture.mp4":
         base_name = os.path.splitext(os.path.basename(filename[1]))[0]
         clipname = base_name.split('.')[0]
         save_eventseg_csv(boundary_times, participant_id, clipname, seed)
     
-    if filename[1] == "resources/Movie_Task/videos/12_years.mp4":
+    if video_basename == "12_years.mp4":
         base_name = os.path.splitext(os.path.basename(filename[1]))[0]
         clipname = base_name.split('.')[0]
         save_eventseg_csv(boundary_times, participant_id, clipname, seed)
     
-    if filename[1] == "resources/Movie_Task/videos/lms.mp4":
+    if video_basename == "lms.mp4":
         base_name = os.path.splitext(os.path.basename(filename[1]))[0]
         clipname = base_name.split('.')[0]
         save_eventseg_csv(boundary_times, participant_id, clipname, seed)
     
-    if filename[1] == "resources/Movie_Task/videos/c4.mp4":
+    if video_basename == "c4.mp4":
         base_name = os.path.splitext(os.path.basename(filename[1]))[0]
         clipname = base_name.split('.')[0]
         save_eventseg_csv(boundary_times, participant_id, clipname, seed)
     
-    if filename[1] == "resources/Movie_Task/videos/500Days.mp4":
+    if video_basename == "500Days.mp4":
         base_name = os.path.splitext(os.path.basename(filename[1]))[0]
         clipname = base_name.split('.')[0]
         save_eventseg_csv(boundary_times, participant_id, clipname, seed)

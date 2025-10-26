@@ -1,0 +1,43 @@
+import pandas as pd
+import numpy as np
+import os
+
+print("🔧 Cleaning Analysis/output.csv for legacy PCA...")
+
+df = pd.read_csv("Analysis/output.csv")
+
+#Keep only numeric "_response" columns plus idno and Task_name
+keep = [c for c in df.columns if "_response" in c]
+if "idno" in df.columns: keep.insert(0, "idno")
+if "Task_name" in df.columns: keep.insert(1, "Task_name")
+df = df[keep]
+
+#Drop NaN-only columns and rows with NaN
+df = df.dropna(axis=1, how="all")
+df = df.replace([np.inf, -np.inf], np.nan).dropna(axis=0, how="any")
+
+#Remove columns with zero variance (numeric only)
+numeric_cols = df.select_dtypes(include=[np.number]).columns
+lowvar_cols = df[numeric_cols].std()[df[numeric_cols].std() <= 1e-8].index
+if len(lowvar_cols):
+    print(f"Dropping near-constant columns: {list(lowvar_cols)}")
+    df = df.drop(columns=lowvar_cols)
+
+#Remove perfectly correlated columns
+corr = df[numeric_cols].corr().abs()
+upper = corr.where(np.triu(np.ones(corr.shape), k=1).astype(bool))
+drop_cols = [c for c in upper.columns if any(upper[c] > 0.999)]
+if drop_cols:
+    print(f"Dropping perfectly correlated columns: {drop_cols}")
+    df = df.drop(columns=drop_cols)
+
+#Add tiny Gaussian noise to numeric cells for stability
+numeric_cols = df.select_dtypes(include=[np.number]).columns
+df[numeric_cols] = df[numeric_cols] + np.random.normal(0, 1e-6, df[numeric_cols].shape)
+
+#Save cleaned file
+os.makedirs("Analysis", exist_ok=True)
+df.to_csv("Analysis/output.csv", index=False)
+
+print(f"✅ Cleaned CSV ready for PCA: {df.shape}")
+print(f"Included columns: {list(df.columns)}")

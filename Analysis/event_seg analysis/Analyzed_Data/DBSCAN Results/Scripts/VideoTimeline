@@ -1,0 +1,79 @@
+import pandas as pd
+import numpy as np
+from sklearn.cluster import DBSCAN
+import os
+
+# ---- Parameters (unchanged) ----
+input_csv = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\master_data.csv"
+output_path = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\Analyzed_Data\Full_Timeline"
+eps_seconds = 2      # DBSCAN window for clustering boundaries
+min_participants = 0  # keep all clusters
+dedup_window = 0.5    # Double-tap removal window (in seconds)
+video_duration = 22 * 60  # seconds (22 min episodes)
+
+# ---- Load data ----
+df = pd.read_csv(input_csv)
+df = df[['ParticipantID', 'VideoName', 'BoundaryTime(s)']]
+
+# ---- Remove double-taps ----
+deduped_rows = []
+for (pid, video), group in df.groupby(['ParticipantID', 'VideoName']):
+    times = group['BoundaryTime(s)'].sort_values().values
+    filtered = []
+    if len(times) > 0:
+        filtered.append(times[0])
+        for t in times[1:]:
+            if t - filtered[-1] >= dedup_window:
+                filtered.append(t)
+    for t in filtered:
+        deduped_rows.append({'ParticipantID': pid,
+                             'VideoName': video,
+                             'BoundaryTime(s)': t})
+
+df_dedup = pd.DataFrame(deduped_rows)
+
+# ---- Ensure output folder exists ----
+os.makedirs(output_path, exist_ok=True)
+
+# ---- Build full timeline per video ----
+for video_name, group in df_dedup.groupby('VideoName'):
+    if group.empty:
+        print(f"No data for {video_name}")
+        continue
+
+    # run DBSCAN (same as before)
+    times = group['BoundaryTime(s)'].values.reshape(-1, 1)
+    db = DBSCAN(eps=eps_seconds, min_samples=1).fit(times)
+    group = group.copy()
+    group['Cluster'] = db.labels_
+
+    # map each cluster -> unique participants
+    part_per_cluster = group.groupby('Cluster')['ParticipantID'].nunique().to_dict()
+    # cluster span (min, max)
+    cmin = group.groupby('Cluster')['BoundaryTime(s)'].min().to_dict()
+    cmax = group.groupby('Cluster')['BoundaryTime(s)'].max().to_dict()
+
+    timeline_vals = []
+    for sec in range(video_duration):
+        # find clusters that cover this second (within eps_seconds)
+        inside = [cid for cid in part_per_cluster
+                  if (sec >= cmin[cid] - eps_seconds) and (sec <= cmax[cid] + eps_seconds)]
+        if inside:
+            # choose the cluster whose center is closest to this second
+            centers = {cid: (cmin[cid] + cmax[cid]) / 2 for cid in inside}
+            best = min(centers, key=lambda c: abs(sec - centers[c]))
+            timeline_vals.append({'VideoName': video_name,
+                                  'Second': sec,
+                                  'Participants': part_per_cluster[best]})
+        else:
+            timeline_vals.append({'VideoName': video_name,
+                                  'Second': sec,
+                                  'Participants': 0})
+
+    timeline_df = pd.DataFrame(timeline_vals)
+    safe = video_name.replace(".mp4", "").replace(" ", "_")
+    out_file = os.path.join(output_path, f"{safe}_full_timeline.csv")
+    timeline_df.to_csv(out_file, index=False)
+    print(f"Saved full timeline: {out_file}")
+
+print("\n✅ Full timelines created for all videos.")

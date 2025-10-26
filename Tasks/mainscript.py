@@ -11,8 +11,12 @@ import pandas as pd
 
 import yaml
 from taskScripts import ESQ, movieTask, eventSegmentation
+from taskScripts import freeassociationTask as freeAssoc
 import os
 import random
+
+from taskScripts import Lingering_Question as lingerQuestion
+
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 if not os.path.exists(os.path.join(os.getcwd(),"log_file")):
         os.mkdir(os.path.join(os.getcwd(),"log_file"))
@@ -73,7 +77,7 @@ class taskbattery(metadatacollection):
                 taskbattery.ESQtask = ESQtask
                 self.INFO = INFO
                 self.taskexeclist = []
-                self.win = visual.Window(size=(1440, 960),color='white',fullscr=True)
+                self.win = visual.Window(size=(1440, 960),color='white',fullscr=False)
                 self.text = text_2 = visual.TextStim(win=self.win, name='text_2',
                         text='Welcome to our experiment. \n Please follow the instructions on-screen and notify the attending researcher if anything is unclear \n We are thankful for your participation. \n Press <return/enter> to continue.',
                         font='Arial',
@@ -95,8 +99,8 @@ class taskbattery(metadatacollection):
                         i.show()
                         i.run()
                         pp = len(self.tasklist)
-                        if en < len(self.tasklist):
-                                i.end()
+                        #if en < len(self.tasklist):
+                                #i.end()
                         
                         
 #OPEN THE TRIAL FILES AND CUT THEM INTO BLOCKS
@@ -391,20 +395,52 @@ if __name__ == "__main__":
 
         # Defining each task as a task object
         movieTask1 = task(eventSegmentation, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/lms.mp4"],"Event Segmentation Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 1,1)
-        movieTask2 = task(eventSegmentation, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/shawshank.mp4"],"Event Segmentation Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 2,1)
-        movieTask3 = task(eventSegmentation, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/prestige.mp4"],"Event Segmentation Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 3,1)
-        movieTask4 = task(eventSegmentation, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/12_years.mp4"],"Event Segmentation Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 4,1)
-        movieTask5 = task(eventSegmentation, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/backToFuture.mp4"],"Event Segmentation Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 1,1)
-        movieTask6 = task(eventSegmentation, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/pulpFiction.mp4"],"Event Segmentation Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 2,1)
-        movieTask7 = task(eventSegmentation, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/500Days.mp4"],"Event Segmentation Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 2,1)
-        movieTask8 = task(eventSegmentation, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/c4.mp4"],"Event Segmentation Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 2,1)
+        movieTask2 = task(eventSegmentation, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/12_years.mp4"],"Event Segmentation Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 2,1)
+        movieTask3 = task(eventSegmentation, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/500Days.mp4"],"Event Segmentation Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 3,1)
+        movieTask4 = task(eventSegmentation, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/backToFuture.mp4"],"Event Segmentation Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 4,1)
+        movieTask5 = task(eventSegmentation, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/c4.mp4"],"Event Segmentation Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 4,1)
+        movieTask6 = task(eventSegmentation, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/prestige.mp4"],"Event Segmentation Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 4,1)
+        movieTask7 = task(eventSegmentation, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/pulpFiction.mp4"],"Event Segmentation Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 4,1)
+        movieTask8 = task(eventSegmentation, datafile, ["resources/Movie_Task/csv/probetimes_orders.csv","resources/Movie_Task/videos/shawshank.mp4"],"Event Segmentation Task",  metacoll.sbINFO.data, int(metacoll.INFO['Block Runtime']),'resources//Movie_Task//csv//sorted_filmList.csv', 4,1)
+
         #moviegroup = [movieTask1,movieTask2,movieTask3]
 
         moviegroup = [movieTask1, movieTask2, movieTask3, movieTask4, movieTask5, movieTask6, movieTask7, movieTask8]
-        #random.shuffle(moviegroup) #just trying to shuffle the video clips 
-        movie_main = taskgroup([moviegroup],"resources/group_inst/movie_main.txt")
+        
+
+        cue_word_map = {
+                "lms.mp4": ("ROADTRIP", "ICE-CREAM"),
+                "12_years.mp4": ("FREEDOM", "MASTER"),
+                "500Days.mp4": ("LOVE", "ROMANCE"),
+                "backToFuture.mp4": ("TIME", "PAST"),
+                "c4.mp4": ("SURVEILLANCE", "GOVERNMENT"),
+                "prestige.mp4": ("MAGIC", "BREAKUP"),
+                "pulpFiction.mp4": ("BRIEFCASE", "ROBBERY"),
+                "shawshank.mp4": ("PRISON", "ESCAPE")
+         }
+        
+        random.shuffle(moviegroup) #just trying to shuffle the video clips 
+        moviegroup = moviegroup[0:2]
 
         
+        
+
+        ## Determine what the first video in the random shuffle is - to be used for free association task
+        first_movie = moviegroup[0].backup_log_location[1]  # second element in the list
+        first_video_name = os.path.basename(first_movie)  
+        
+        movie_cues = list(cue_word_map[first_video_name])
+        random.shuffle(movie_cues)
+        cue_pre = movie_cues[0]
+        cue_post = movie_cues[1]
+
+        print(f"First movie: {first_video_name}")
+        print(f"PreFA cue: {cue_pre} | PostFA cue: {cue_post}")
+
+        
+
+
+        movie_main = taskgroup([moviegroup],"resources/group_inst/movie_main.txt")
 
 
         fulltasklist = [movie_main]
@@ -429,7 +465,62 @@ if __name__ == "__main__":
         event.waitKeys(keyList=['return'])
         tbt.win.flip()
 
-        eventSegmentation.run_practice(tbt.win) #to run the practice before the battery
-        
+        #eventSegmentation.run_practice(tbt.win) #to run the practice before the battery
+
+        # === PreFA ===
+        print("Starting Free Association Task (before movies)...")
+        freeAssoc.show_instructions(tbt.win)
+        responses_pre = freeAssoc.runexp(
+                tbt.win,
+                participant_id=metacoll.INFO['Subject'],
+                cue_word=cue_pre,
+                duration=10,  # 5 min
+                VideoName=first_video_name
+        )
+        freeAssoc.save_association(
+                responses_pre,
+                participant_id=metacoll.INFO['Subject'],
+                label="_PRE",
+                VideoName=first_video_name
+        )
+
+        # Run movies
         tbt.run_battery()
+
+        # === PostFA ===
+        print("Starting Free Association Task (after movies)...")
+        freeAssoc.show_instructions(tbt.win)
+        responses_post = freeAssoc.runexp(
+                tbt.win,
+                participant_id=metacoll.INFO['Subject'],
+                cue_word=cue_post,
+                duration=10,  # 5 min
+                VideoName=first_video_name
+        )
+        freeAssoc.save_association(
+                responses_post,
+                participant_id=metacoll.INFO['Subject'],
+                label="_POST",
+                VideoName = first_video_name
+        )
+
+        # After final video & final free association
+
+        print("Starting Lingering Self-Report (after movies)...")
+        lingerQuestion.show_instructions(tbt.win)
+
+        response_linger = lingerQuestion.runexp(
+                tbt.win,
+                participant_id=metacoll.INFO['Subject'],
+                VideoName=first_video_name
+        )
+
+        lingerQuestion.save_response(
+                response_linger,
+                participant_id=metacoll.INFO['Subject'],
+                VideoName=first_video_name
+        )
+
+        movie_main.end()
+
         print("Success")

@@ -1,0 +1,67 @@
+import pandas as pd
+import numpy as np
+import os
+import glob
+import statsmodels.formula.api as smf
+
+# =========================
+# Config
+# =========================
+SEMANTIC_DIR = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\Analyzed_Data\Semantics"
+KDE_DIR      = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\Analyzed_Data\Kernal\KDE_Results"
+VIDEO_DURATION = 22 * 60  # 22 minutes
+# =========================
+
+all_data = []
+
+# --- Loop through semantic files and align with KDE ---
+semantic_files = glob.glob(os.path.join(SEMANTIC_DIR, "*_aligned_semantic.csv"))
+
+for sem_file in semantic_files:
+    base = os.path.basename(sem_file)
+    video_id = base.split("_")[0]  # e.g., "friends1"
+    kde_file = os.path.join(KDE_DIR, f"{video_id}_kde_timeseries.csv")
+
+    if not os.path.exists(kde_file):
+        print(f"⚠️ Skipping {video_id}: KDE file not found at {kde_file}")
+        continue
+
+    # --- Load semantic data ---
+    sem = pd.read_csv(sem_file)
+    sem_time = pd.to_numeric(sem["time"], errors="coerce").values
+    sem_shift = 1 - pd.to_numeric(sem["similarity_prev"], errors="coerce").fillna(1).values
+
+    # --- Load KDE density data ---
+    kde = pd.read_csv(kde_file)
+    kde_time = pd.to_numeric(kde["Time(s)"], errors="coerce").values
+    kde_density = pd.to_numeric(kde["Density"], errors="coerce").values
+
+    # --- Align to common 1s bins ---
+    t = np.arange(0, VIDEO_DURATION+1, 1)
+    sem_interp = np.interp(t, sem_time, sem_shift)
+    kde_interp = np.interp(t, kde_time, kde_density)
+
+    # --- Make dataframe ---
+    df = pd.DataFrame({
+        "time": t,
+        "semantic_shift": sem_interp,
+        "boundary_density": kde_interp,
+        "video": video_id
+    })
+    all_data.append(df)
+
+# --- Combine all videos ---
+data = pd.concat(all_data, ignore_index=True)
+
+# --- Z-score predictors (optional, makes interpretation cleaner) ---
+data["semantic_shift_z"] = (data["semantic_shift"] - data["semantic_shift"].mean()) / data["semantic_shift"].std()
+data["boundary_density_z"] = (data["boundary_density"] - data["boundary_density"].mean()) / data["boundary_density"].std()
+
+print(data.head())
+
+# --- Fit Linear Mixed Model ---
+# boundary density predicted by semantic shift, with random intercepts per video
+model = smf.mixedlm("boundary_density_z ~ semantic_shift_z", data, groups=data["video"])
+result = model.fit()
+
+print(result.summary())

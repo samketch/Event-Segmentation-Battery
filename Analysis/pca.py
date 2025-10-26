@@ -1,60 +1,54 @@
+"""
+============================================================
+ThoughtSpace PCA — Event Segmentation Battery
+============================================================
+Runs PCA on your mDES dataset using the official ThoughtSpace
+pipeline (with rotation, KMO/Bartlett tests, word clouds, and
+variance reports). Saves all results in organized folders.
+
+Author: Sam Ketcheson
+============================================================
+"""
+
+import sys
 import os
 import pandas as pd
-from factor_analyzer.factor_analyzer import calculate_bartlett_sphericity, calculate_kmo
-from factor_analyzer.rotator import Rotator
-from sklearn.decomposition import PCA
-import numpy as np
+from ThoughtSpace.pca import groupedPCA  # now that it's installed correctly
 
+# ============================================================
+# 1. Paths and config
+# ============================================================
+DATA_PATH = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Analysis\output.csv"
+OUTPUT_DIR = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Analysis\ThoughtSpace_Results"
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-data = pd.read_csv('Analysis/output.csv').drop(["Task_name","Participant #"],axis=1)
+GROUP_COL = "VideoName"  # how to group data (each video = one PCA group)
+N_COMPONENTS = "infer"   # ThoughtSpace infers components automatically
 
-bart = calculate_bartlett_sphericity(data)
-kmo = calculate_kmo(data)
-n_comp = 4
-PCAmodel = PCA(n_components=n_comp)
-rot = Rotator()
+# ============================================================
+# 2. Load data
+# ============================================================
+df = pd.read_csv(DATA_PATH)
 
-PCAmodel.fit(data)
+# Drop any irrelevant columns that aren't numeric
+exclude_cols = ["idno", "Task_name"]
+df = df.drop(columns=[c for c in exclude_cols if c in df.columns], errors="ignore")
 
-loadings = PCAmodel.components_
-loadings = rot.fit_transform(PCAmodel.components_.T).T
-#lods = rot.transform(PCAmodel.components_.T)
-names = data.columns
-#loadings = PCAmodel.components_
-loadings = pd.DataFrame(
-    np.round(loadings.T, 3),
-    index=names,
-    columns=[f"Component {x}" for x in range(n_comp)],
-)
-PCAresults = np.dot(data,loadings).T
-scores = ['0','1','2','3']
-numloadings=5
-for score in scores:
-    
-    try:
-        loading = loadings[f"Component {score}"]
-        loadingpos = loading.apply(lambda x: np.abs(x)).sort_values(ascending=False)
-        tops = loading[loadingpos[:numloadings].index]
-    except Exception:
-        tops = "Loadings are unavailable"
-    print(
-        f"""
-    Results for {score}:
-    Largest loadings: 
-    """
-    )
-    with pd.option_context(
-        "display.max_rows",
-        5,
-        "display.max_columns",
-        None,
-        "display.width",
-        1000,
-        "display.precision",
-        3,
-        "display.colheader_justify",
-        "center",
-    ):
-        print(tops)
+# ============================================================
+# 3. Initialize and run grouped PCA
+# ============================================================
+print(f"Running ThoughtSpace grouped PCA on {df[GROUP_COL].nunique()} videos...\n")
 
-print('e')
+pca_model = groupedPCA(grouping_col=GROUP_COL, n_components=N_COMPONENTS)
+pca_model.fit(df)
+
+# You must transform before saving so ThoughtSpace has projected scores
+_ = pca_model.transform(df)
+
+# ============================================================
+# 4. Save outputs (loadings, scores, scree plots, wordclouds)
+# ============================================================
+pca_model.save(path=OUTPUT_DIR, pathprefix="PCA_byVideo", includetime=False)
+
+print("\n✅ ThoughtSpace PCA complete! Results saved to:")
+print(OUTPUT_DIR)

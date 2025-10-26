@@ -1,0 +1,102 @@
+import os
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import DBSCAN
+
+# =========================
+# Configuration
+# =========================
+MASTER_FILE   = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\master_data.csv"
+OUTPUT_DIR    = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\Analyzed_Data\graphs_dbscan_matched"
+VIDEO_DURATION = 22 * 60        # 22 minutes = 1320 seconds
+EPS_SECONDS    = 1              # same as DBSCAN eps
+DEDUP_WINDOW   = 0.5            # same as DBSCAN double tap window
+MIN_PARTICIPANTS_FOR_CONSENSUS = 5   # for reference only, plotting uses all clusters
+# =========================
+
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+# ---- Load master ----
+df = pd.read_csv(MASTER_FILE)[["ParticipantID", "VideoName", "BoundaryTime(s)"]].dropna()
+
+# ---- Remove double taps within DEDUP_WINDOW per participant and video ----
+dedup_rows = []
+for (pid, vid), grp in df.groupby(["ParticipantID", "VideoName"]):
+    t = np.sort(grp["BoundaryTime(s)"].values)
+    if t.size == 0:
+        continue
+    kept = [t[0]]
+    for x in t[1:]:
+        if x - kept[-1] >= DEDUP_WINDOW:
+            kept.append(x)
+    for x in kept:
+        dedup_rows.append({"ParticipantID": pid, "VideoName": vid, "Time": x})
+df_clean = pd.DataFrame(dedup_rows)
+
+# ---- Process per video ----
+for video, g in df_clean.groupby("VideoName"):
+    times = g["Time"].values.reshape(-1, 1)
+    if times.size == 0:
+        print(f"No data for {video}")
+        continue
+
+    # DBSCAN on continuous times (no rounding)
+    db = DBSCAN(eps=EPS_SECONDS, min_samples=1).fit(times)
+    labels = db.labels_
+
+    # Attach cluster labels
+    g = g.reset_index(drop=True)
+    g["Cluster"] = labels
+
+    # Precompute cluster stats
+    cluster_groups = g.groupby("Cluster")
+    cluster_participants = cluster_groups["ParticipantID"].nunique().to_dict()
+    cluster_times = cluster_groups["Time"].apply(np.array).to_dict()
+    cluster_min = {c: float(ts.min()) for c, ts in cluster_times.items()}
+    cluster_max = {c: float(ts.max()) for c, ts in cluster_times.items()}
+
+    # For fast lookup, keep arrays of all press times with cluster ids
+    press_times = g["Time"].to_numpy()
+    press_clusters = g["Cluster"].to_numpy()
+
+    # Build per second series aligned to DBSCAN clusters
+    series = np.zeros(VIDEO_DURATION, dtype=int)
+
+    for s in range(VIDEO_DURATION):
+        # find presses within ±EPS_SECONDS of this second
+        mask = np.abs(press_times - s) <= EPS_SECONDS
+        if not np.any(mask):
+            series[s] = 0
+            continue
+
+        # choose the nearest press to this second, then use its cluster id
+        nearest_idx = np.argmin(np.abs(press_times[mask] - s))
+        cluster_id = press_clusters[mask][nearest_idx]
+
+        # optional guard: require this second to be within the span of the cluster expanded by EPS
+        # this keeps plateaus limited to the cluster region, not the whole video
+        cmin = cluster_min[cluster_id] - EPS_SECONDS
+        cmax = cluster_max[cluster_id] + EPS_SECONDS
+        if s < cmin or s > cmax:
+            series[s] = 0
+        else:
+            series[s] = int(cluster_participants[cluster_id])
+
+    # Plot
+    plt.figure(figsize=(14, 4))
+    plt.plot(np.arange(VIDEO_DURATION), series, color="steelblue")
+    plt.xlabel("Time (seconds)")
+    plt.ylabel("Num Participants")
+    plt.title(f"Per second boundary counts – {video}")
+    plt.grid(True, alpha=0.3)
+    plt.tight_layout()
+
+    safe = video.replace(".mp4", "").replace(" ", "_")
+    out = os.path.join(OUTPUT_DIR, f"{safe}_line.png")
+    plt.savefig(out, dpi=150)
+    plt.close()
+
+    print(f"Saved: {out}")
+
+print("\nDone. DBSCAN matched per second plots saved.")

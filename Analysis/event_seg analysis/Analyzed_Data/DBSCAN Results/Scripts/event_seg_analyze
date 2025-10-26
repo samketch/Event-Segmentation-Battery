@@ -1,0 +1,88 @@
+import pandas as pd
+import numpy as np
+from sklearn.cluster import DBSCAN
+import os
+
+# ---- Parameters ----
+input_csv = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\master_data.csv"
+output_path = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\DBSCAN Results"
+eps_seconds = 5  # DBSCAN window for clustering boundaries
+min_participants = 5  # Minimum unique participants per cluster for consensus
+dedup_window = 0.5       # Double-tap removal window (in seconds)
+
+# ---- Load data ----
+df = pd.read_csv(input_csv)
+df = df[['ParticipantID', 'VideoName', 'BoundaryTime(s)']]
+
+# ---- Remove double-tap presses per participant within dedup_window ----
+deduped_rows = []
+
+for (pid, video), group in df.groupby(['ParticipantID', 'VideoName']):
+    times = group['BoundaryTime(s)'].sort_values().values
+    filtered_times = []
+
+    if len(times) > 0:
+        filtered_times.append(times[0])
+        for t in times[1:]:
+            if t - filtered_times[-1] >= dedup_window:
+                filtered_times.append(t)
+
+    for t in filtered_times:
+        deduped_rows.append({
+            'ParticipantID': pid,
+            'VideoName': video,
+            'BoundaryTime(s)': t
+        })
+
+df_dedup = pd.DataFrame(deduped_rows)
+
+# ---- Ensure output folder exists ----
+os.makedirs(output_path, exist_ok=True)
+
+# ---- Collect all consensus results ----
+all_consensus = []
+
+# ---- Process per video ----
+for video_name, group in df_dedup.groupby('VideoName'):
+    times = group['BoundaryTime(s)'].values.reshape(-1, 1)
+    db = DBSCAN(eps=eps_seconds, min_samples=1).fit(times)
+
+    group = group.copy()
+    group['Cluster'] = db.labels_
+    clusters = group.groupby('Cluster')
+
+    results = []
+    for cluster_id, cluster_data in clusters:
+        unique_participants = cluster_data['ParticipantID'].nunique()
+        if unique_participants >= min_participants:
+            consensus_time = cluster_data['BoundaryTime(s)'].mean()
+            result = {
+                'VideoName': video_name,
+                'ConsensusTime(s)': round(consensus_time, 3),
+                'ParticipantsInAgreement': unique_participants,
+                'TotalMarksInCluster': len(cluster_data)
+            }
+            results.append(result)
+            all_consensus.append(result)
+
+    # ---- Save per-video CSV ----
+    if results:
+        consensus_df = pd.DataFrame(results)
+        consensus_df.sort_values(by='ConsensusTime(s)', inplace=True)
+
+        safe_name = video_name.replace(".mp4", "").replace(" ", "_")
+        output_file = os.path.join(output_path, f"{safe_name}_consensus_boundaries.csv")
+        consensus_df.to_csv(output_file, index=False)
+        print(f"Saved: {output_file}")
+    else:
+        print(f"No consensus found for video: {video_name}")
+
+# ---- Save combined file ----
+if all_consensus:
+    all_df = pd.DataFrame(all_consensus)
+    all_df.sort_values(by=['VideoName', 'ConsensusTime(s)'], inplace=True)
+    combined_file = os.path.join(output_path, "all_videos_consensus_boundaries.csv")
+    all_df.to_csv(combined_file, index=False)
+    print(f"Saved combined file: {combined_file}")
+else:
+    print("No consensus boundaries found in any video.")
