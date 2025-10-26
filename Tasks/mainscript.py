@@ -524,3 +524,5 @@ if __name__ == "__main__":
         movie_main.end()
 
         print("Success")
+
+        print('test')
