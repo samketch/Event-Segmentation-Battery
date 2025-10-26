@@ -409,7 +409,7 @@ if __name__ == "__main__":
         
 
         cue_word_map = {
-                "lms.mp4": ("ROADTRIP", "ICE-CREAM"),
+                "lms.mp4": ("BREAKFAST", "ICE-CREAM"),
                 "12_years.mp4": ("FREEDOM", "MASTER"),
                 "500Days.mp4": ("LOVE", "ROMANCE"),
                 "backToFuture.mp4": ("TIME", "PAST"),
@@ -524,5 +524,3 @@ if __name__ == "__main__":
         movie_main.end()
 
         print("Success")
-
-        print('test')
