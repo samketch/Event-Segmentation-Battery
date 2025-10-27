@@ -50,5 +50,5 @@ _ = pca_model.transform(df)
 # ============================================================
 pca_model.save(path=OUTPUT_DIR, pathprefix="PCA_byVideo", includetime=False)
 
-print("\n✅ ThoughtSpace PCA complete! Results saved to:")
+print("\nThoughtSpace PCA complete! Results saved to:")
 print(OUTPUT_DIR)

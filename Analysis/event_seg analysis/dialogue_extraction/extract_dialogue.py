@@ -33,10 +33,10 @@ import pandas as pd
 # =========================
 
 # Folder containing all the video files to process (change this to your video path)
-VIDEO_DIR  = r"C:\Users\Smallwood Lab\friends-event-segmentation\Tasks\taskScripts\resources\Movie_Task\videos"
+VIDEO_DIR  = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Tasks\taskScripts\resources\Movie_Task\videos"
 
 # Folder where output transcript CSVs will be saved (change this to your output directory)
-OUTPUT_DIR = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\Analyzed_Data\Transcripts"
+OUTPUT_DIR = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Analysis\event_seg analysis\Analyzed_Data\Transcripts"
 
 # Whisper model size to use. Options (in increasing accuracy + size): 
 #   "tiny", "base", "small", "medium", "large"
@@ -78,7 +78,7 @@ for file in os.listdir(VIDEO_DIR):
         print(f"Skipping {file} (already processed).")
         continue
 
-    print(f"\n🎬 Processing {file} …")
+    print(f"\nProcessing {file} …")
 
     # --- Step 1: Transcribe audio from the video ---
     # The model generates text segments with approximate timestamps
@@ -108,11 +108,11 @@ for file in os.listdir(VIDEO_DIR):
     df = pd.DataFrame(rows)
     df.to_csv(out_path, index=False, encoding="utf-8")
 
-    print(f"✅ Saved transcript: {out_path}")
+    print(f"Saved transcript: {out_path}")
 
 # =========================
 # Wrap-up
 # =========================
 
-print("\n🎉 All videos processed. Transcripts with timestamps are in:")
+print("\nAll videos processed. Transcripts with timestamps are in:")
 print(OUTPUT_DIR)

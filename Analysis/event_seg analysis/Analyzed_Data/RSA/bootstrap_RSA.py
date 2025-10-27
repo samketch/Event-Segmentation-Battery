@@ -608,7 +608,7 @@ for file in os.listdir(RSA_DIR):
 
         # Store DataFrame for overall summary (combined later)
         summary.append(df)
-        print(f"✅ {len(df)} events analyzed and saved for {base}.")
+        print(f"{len(df)} events analyzed and saved for {base}.")
 
 
 # =========================

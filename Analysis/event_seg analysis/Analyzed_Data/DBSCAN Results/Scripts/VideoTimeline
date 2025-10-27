@@ -76,4 +76,4 @@ for video_name, group in df_dedup.groupby('VideoName'):
     timeline_df.to_csv(out_file, index=False)
     print(f"Saved full timeline: {out_file}")
 
-print("\n✅ Full timelines created for all videos.")
+print("\nFull timelines created for all videos.")

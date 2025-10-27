@@ -23,7 +23,7 @@ for sem_file in semantic_files:
     kde_file = os.path.join(KDE_DIR, f"{video_id}_kde_timeseries.csv")
 
     if not os.path.exists(kde_file):
-        print(f"⚠️ Skipping {video_id}: KDE file not found at {kde_file}")
+        print(f"Skipping {video_id}: KDE file not found at {kde_file}")
         continue
 
     # --- Load semantic data ---

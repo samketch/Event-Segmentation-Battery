@@ -62,11 +62,11 @@ for file in os.listdir(INPUT_DIR):
             print(f"{video} — {comp}: F={F:.2f}, p={p:.3f}, η²={eta2:.2f if eta2 else 0} ({sig})")
 
         except Exception as e:
-            print(f"⚠️ ANOVA failed for {video}, {comp}: {e}")
+            print(f"ANOVA failed for {video}, {comp}: {e}")
 
 # Save all results
 if results:
     pd.DataFrame(results).to_csv(OUTPUT_FILE, index=False)
-    print(f"\n✅ ANOVA results saved → {OUTPUT_FILE}")
+    print(f"\nANOVA results saved → {OUTPUT_FILE}")
 else:
-    print("⚠️ No ANOVA results computed.")
+    print("No ANOVA results computed.")
