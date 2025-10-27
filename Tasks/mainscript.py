@@ -410,7 +410,7 @@ if __name__ == "__main__":
 
         cue_word_map = {
                 "lms.mp4": ("BREAKFAST", "ICE-CREAM"),
-                "12_years.mp4": ("FREEDOM", "MASTER"),
+                "12_years.mp4": ("OBEDIENCE", "DEHUMANIZATION"),
                 "500Days.mp4": ("LOVE", "ROMANCE"),
                 "backToFuture.mp4": ("TIME", "PAST"),
                 "c4.mp4": ("SURVEILLANCE", "GOVERNMENT"),

@@ -148,4 +148,4 @@ for file in os.listdir(TRANSCRIPT_DIR):
     if file.endswith(".csv"):
         process_file(file)
 
-print("✅ Done – semantic timecourses + plots created!")
+print("Done – semantic timecourses + plots created!")

@@ -23,7 +23,7 @@ for sem_file in semantic_files:
     # Match KDE file
     kde_file = os.path.join(KDE_DIR, f"{video_id}_kde_timeseries.csv")
     if not os.path.exists(kde_file):
-        print(f"⚠️ Skipping {video_id}: KDE file not found at {kde_file}")
+        print(f"Skipping {video_id}: KDE file not found at {kde_file}")
         continue
 
     print(f"Processing {video_id} …")
@@ -69,4 +69,4 @@ for sem_file in semantic_files:
     plt.close()
     print(f"Saved plot: {out_fig}")
 
-print("✅ Done with all videos!")
+print("Done with all videos!")

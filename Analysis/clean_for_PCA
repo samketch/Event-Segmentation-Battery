@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import os
 
-print("🔧 Cleaning Analysis/output.csv for legacy PCA...")
+print("Cleaning Analysis/output.csv for legacy PCA...")
 
 df = pd.read_csv("Analysis/output.csv")
 
@@ -39,5 +39,5 @@ df[numeric_cols] = df[numeric_cols] + np.random.normal(0, 1e-6, df[numeric_cols]
 os.makedirs("Analysis", exist_ok=True)
 df.to_csv("Analysis/output.csv", index=False)
 
-print(f"✅ Cleaned CSV ready for PCA: {df.shape}")
+print(f"Cleaned CSV ready for PCA: {df.shape}")
 print(f"Included columns: {list(df.columns)}")

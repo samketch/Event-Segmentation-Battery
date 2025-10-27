@@ -17,7 +17,7 @@ def merge_eventseg(folder: str, output_file: str) -> None:
             all_dfs.append(df)
 
     if not all_dfs:
-        print("⚠️ No CSV files found in folder.")
+        print("No CSV files found in folder.")
         return
 
     new_data = pd.concat(all_dfs, ignore_index=True)
@@ -28,13 +28,13 @@ def merge_eventseg(folder: str, output_file: str) -> None:
 
     # If master_data already exists, append only new rows
     if os.path.exists(output_file):
-        print(f"🔎 Existing master file found at {output_file}, appending new rows...")
+        print(f"Existing master file found at {output_file}, appending new rows...")
         master = pd.read_csv(output_file)
         combined = pd.concat([master, new_data], ignore_index=True).drop_duplicates(
             subset=["ParticipantID", "VideoName", "BoundaryTime(s)"]
         )
     else:
-        print("📂 No master file found, creating new one...")
+        print("No master file found, creating new one...")
         combined = new_data
 
     combined = combined.sort_values(by=["ParticipantID", "VideoName", "BoundaryTime(s)"])
@@ -43,7 +43,7 @@ def merge_eventseg(folder: str, output_file: str) -> None:
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
 
     combined.to_csv(output_file, index=False)
-    print(f"\n✅ Master data updated at: {output_file}")
+    print(f"\nMaster data updated at: {output_file}")
 
 if __name__ == "__main__":
     merge_eventseg(EVENT_SEG_FOLDER, OUTPUT_FILE)

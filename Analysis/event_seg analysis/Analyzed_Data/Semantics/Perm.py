@@ -32,7 +32,7 @@ for sem_file in semantic_files:
     kde_file = os.path.join(KDE_DIR, f"{video_id}_kde_timeseries.csv")
 
     if not os.path.exists(kde_file):
-        print(f"⚠️ Skipping {video_id}: KDE file not found at {kde_file}")
+        print(f"Skipping {video_id}: KDE file not found at {kde_file}")
         continue
 
     print(f"\n=== Processing {video_id} ===")
@@ -113,4 +113,4 @@ for sem_file in semantic_files:
 # --- Save summary table ---
 out_csv = os.path.join(BASE_OUT, "permutation_summary.csv")
 pd.DataFrame(results).to_csv(out_csv, index=False)
-print(f"\n✅ Saved summary results to {out_csv}")
+print(f"\nSaved summary results to {out_csv}")
