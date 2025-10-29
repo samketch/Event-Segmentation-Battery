@@ -1,0 +1,35 @@
+METADATA:
+Experiment Seed,Subject
+2855151,003
+Time after setup,6.982374200131744
+Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID,Response_Key,Auxillary Data,Assoc Task
+ 
+Runtime Mod,-12
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,459.8245622999966
+ 
+Runtime Mod,10
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,864.527951200027
+ 
+Runtime Mod,10
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,1550.6378191001713
+ 
+Runtime Mod,10
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,1946.16690750001
+ 
+Runtime Mod,10
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,2638.0017171001527
+ 
+Runtime Mod,10
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,3018.1416889999527
+ 
+Runtime Mod,10
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,3403.111176100094
+ 
+Runtime Mod,10

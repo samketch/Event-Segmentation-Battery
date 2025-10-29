@@ -1,0 +1,36 @@
+METADATA:
+Experiment Seed,Subject
+2855151,003
+Index,Field Name,Value
+0,Experiment Seed,2855151
+1,Subject,003
+Time after setup,6.982361900154501
+Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID,Response_Key,Auxillary Data,Assoc Task
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,459.8245478000026
+Movie Task Start,459.82458889996633,,,,Event Segmentation Task,1,003,,,
+Movie Start,473.9923309001606,,,,Event Segmentation Task,1,003,,pulpFiction.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,864.5279357000254
+Movie Task Start,864.5279779999983,,,,Event Segmentation Task,1,003,,,
+Movie Start,870.0093861001078,,,,Event Segmentation Task,1,003,,lms.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,1550.6378035000525
+Movie Task Start,1550.6378443001304,,,,Event Segmentation Task,1,003,,,
+Movie Start,1567.6168693001382,,,,Event Segmentation Task,1,003,,backToFuture.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,1946.1668891001027
+Movie Task Start,1946.1669338000938,,,,Event Segmentation Task,1,003,,,
+Movie Start,1950.7213338001166,,,,Event Segmentation Task,1,003,,c4.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,2638.0017006001435
+Movie Task Start,2638.0017440000083,,,,Event Segmentation Task,1,003,,,
+Movie Start,2640.5612536000554,,,,Event Segmentation Task,1,003,,prestige.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,3018.141674600076
+Movie Task Start,3018.14171310002,,,,Event Segmentation Task,1,003,,,
+Movie Start,3020.400693899952,,,,Event Segmentation Task,1,003,,12_years.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,3403.1111598999705
+Movie Task Start,3403.1112015000544,,,,Event Segmentation Task,1,003,,,
+Movie Start,3405.408652700018,,,,Event Segmentation Task,1,003,,500Days.mp4,
