@@ -1,0 +1,11 @@
+participant_id,VideoName,CueWord,Response,RT (s)
+012,shawshank.mp4,ESCAPE,exit,26.221377100009704
+012,shawshank.mp4,EXIT,leave,10.758748000007472
+012,shawshank.mp4,LEAVE,survive,11.727416900001117
+012,shawshank.mp4,SURVIVE,free,53.71028549999755
+012,shawshank.mp4,FREE,break,21.01719929999672
+012,shawshank.mp4,BREAK,run,3.33642079999845
+012,shawshank.mp4,RUN,miss,22.200903300006757
+012,shawshank.mp4,MISS,avoid,3.7871905000065453
+012,shawshank.mp4,AVOID,flee,27.555806499993196
+012,shawshank.mp4,FLEE,captive,63.417738599993754

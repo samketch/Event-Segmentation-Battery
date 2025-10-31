@@ -1,0 +1,7 @@
+participant_id,VideoName,CueWord,Response,RT (s)
+012,shawshank.mp4,PRISON,cell,4.737420599994948
+012,shawshank.mp4,CELL,block,8.807379299993045
+012,shawshank.mp4,BLOCK,bunch,53.05924650000816
+012,shawshank.mp4,BUNCH,group,14.194682300003478
+012,shawshank.mp4,GROUP,work,19.532538700004807
+012,shawshank.mp4,WORK,task,12.894452300010016
