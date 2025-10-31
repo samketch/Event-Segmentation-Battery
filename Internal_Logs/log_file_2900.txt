@@ -1,0 +1,160 @@
+pygame 2.1.2 (SDL 2.0.18, Python 3.6.13)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+[5613169, '013']
+[<__main__.task object at 0x0000022CB51EAC88>, <__main__.task object at 0x0000022CB51EAC50>, <__main__.task object at 0x0000022CB51EA9E8>, <__main__.task object at 0x0000022CB51EAB00>, <__main__.task object at 0x0000022CB51EAA20>, <__main__.task object at 0x0000022CB51EAA90>, <__main__.task object at 0x0000022CB51EAAC8>, <__main__.task object at 0x0000022CB51EAB38>]
+First movie: lms.mp4
+PreFA cue: ICE-CREAM | PostFA cue: BREAKFAST
+Starting Free Association Task (before movies)...
+[SAVED] Free association data saved to C:\Users\Smallwood Lab\Documents\GitHub\Event-Segmentation-Battery\Tasks\taskScripts\..\free_association\013_freeAssoc_20251030_131222.csv
+Now initializing Event Segmentation Task
+Now setting up Event Segmentation Task
+Now running Event Segmentation Task
+[DEBUG] Key: space, Timestamp: 10.675453300005756, Movie status: 1, Clock time: 10.675558900009491
+[DEBUG] Key: space, Timestamp: 76.52585309999995, Movie status: 1, Clock time: 76.52624150000338
+[DEBUG] Key: space, Timestamp: 126.50178780000715, Movie status: 1, Clock time: 126.5019023000059
+[DEBUG] Key: space, Timestamp: 145.0377332000062, Movie status: 1, Clock time: 145.04910760000348
+[DEBUG] Key: space, Timestamp: 164.14784790000704, Movie status: 1, Clock time: 164.14795890000823
+[DEBUG] Key: space, Timestamp: 178.19435469999735, Movie status: 1, Clock time: 178.19678040000144
+[DEBUG] Key: space, Timestamp: 207.53228149999632, Movie status: 1, Clock time: 207.532386100007
+[DEBUG] Key: space, Timestamp: 217.4239275, Movie status: 1, Clock time: 217.42404270000407
+[DEBUG] Key: space, Timestamp: 253.63685490000353, Movie status: 1, Clock time: 253.63724340000772
+[DEBUG] Key: space, Timestamp: 281.4580508000072, Movie status: 1, Clock time: 281.4581590000016
+[DEBUG] Key: space, Timestamp: 306.0447753000044, Movie status: 1, Clock time: 306.04491039999994
+[DEBUG] Key: space, Timestamp: 366.95977590000257, Movie status: 1, Clock time: 366.95989420000114
+[DEBUG] Key: space, Timestamp: 428.9927777999983, Movie status: 1, Clock time: 428.9928948000015
+[DEBUG] Key: space, Timestamp: 450.27562780000153, Movie status: 1, Clock time: 450.27573400000983
+[DEBUG] Key: space, Timestamp: 491.1414963999996, Movie status: 1, Clock time: 491.14160499999707
+[DEBUG] Key: space, Timestamp: 568.805208500009, Movie status: 1, Clock time: 568.8059781000047
+[DEBUG] Key: space, Timestamp: 588.4693663000071, Movie status: 1, Clock time: 588.4694811000081
+[DEBUG] Key: space, Timestamp: 641.0947926000081, Movie status: 1, Clock time: 641.0949284000089
+Now initializing Event Segmentation Task
+Now setting up Event Segmentation Task
+Now running Event Segmentation Task
+[DEBUG] Key: space, Timestamp: 82.89986390000558, Movie status: 1, Clock time: 82.90001769999799
+[DEBUG] Key: space, Timestamp: 136.74286779999966, Movie status: 1, Clock time: 136.74299549999705
+[DEBUG] Key: space, Timestamp: 198.58177910000086, Movie status: 1, Clock time: 198.59168019999925
+[DEBUG] Key: space, Timestamp: 284.17741980000574, Movie status: 1, Clock time: 284.17758249999315
+[DEBUG] Key: space, Timestamp: 302.17500380000274, Movie status: 1, Clock time: 302.17512030000216
+[DEBUG] Key: space, Timestamp: 332.84944299999916, Movie status: 1, Clock time: 332.84955810000247
+[DEBUG] Key: space, Timestamp: 482.9517862999928, Movie status: 1, Clock time: 482.9519130999979
+[DEBUG] Key: space, Timestamp: 632.4539231999952, Movie status: 1, Clock time: 632.4540314000042
+Now initializing Event Segmentation Task
+Now setting up Event Segmentation Task
+Now running Event Segmentation Task
+[DEBUG] Key: space, Timestamp: 88.53800479999336, Movie status: 1, Clock time: 88.53843760000018
+[DEBUG] Key: space, Timestamp: 126.51741280000715, Movie status: 1, Clock time: 126.51753240000107
+[DEBUG] Key: space, Timestamp: 187.08286609999777, Movie status: 1, Clock time: 187.0829814000026
+[DEBUG] Key: space, Timestamp: 256.35459050000645, Movie status: 1, Clock time: 256.3547039999976
+[DEBUG] Key: space, Timestamp: 300.37215209999704, Movie status: 1, Clock time: 300.37226089999604
+Now initializing Event Segmentation Task
+Now setting up Event Segmentation Task
+Now running Event Segmentation Task
+[DEBUG] Key: space, Timestamp: 51.82471660000738, Movie status: 1, Clock time: 51.82482790001086
+[DEBUG] Key: space, Timestamp: 71.6737024000031, Movie status: 1, Clock time: 71.67380970000522
+[DEBUG] Key: space, Timestamp: 104.96691040000587, Movie status: 1, Clock time: 104.96701600000961
+[DEBUG] Key: space, Timestamp: 155.80794470000546, Movie status: 1, Clock time: 155.8080539000075
+[DEBUG] Key: space, Timestamp: 179.29351630000747, Movie status: 1, Clock time: 179.29389749999973
+[DEBUG] Key: space, Timestamp: 203.06368839999777, Movie status: 1, Clock time: 203.06408199999714
+[DEBUG] Key: space, Timestamp: 271.9503263000079, Movie status: 1, Clock time: 271.9504413000104
+[DEBUG] Key: space, Timestamp: 300.90672520000953, Movie status: 1, Clock time: 300.90693160000956
+[DEBUG] Key: space, Timestamp: 335.50130270000955, Movie status: 1, Clock time: 335.5020981999987
+Now initializing Event Segmentation Task
+Now setting up Event Segmentation Task
+Now running Event Segmentation Task
+[DEBUG] Key: space, Timestamp: 25.971495700010564, Movie status: 1, Clock time: 25.97169869999925
+[DEBUG] Key: space, Timestamp: 77.12853339999856, Movie status: 1, Clock time: 77.12866380000196
+[DEBUG] Key: space, Timestamp: 102.38274749999982, Movie status: 1, Clock time: 102.38312640000368
+[DEBUG] Key: space, Timestamp: 138.86131300000125, Movie status: 1, Clock time: 138.86148500000127
+[DEBUG] Key: space, Timestamp: 184.34783140000945, Movie status: 1, Clock time: 184.34821100000408
+[DEBUG] Key: space, Timestamp: 238.7070371000009, Movie status: 1, Clock time: 238.7072210000042
+[DEBUG] Key: space, Timestamp: 260.0115489000018, Movie status: 1, Clock time: 260.0244003000116
+[DEBUG] Key: space, Timestamp: 315.05197540001245, Movie status: 1, Clock time: 315.0523458000098
+Now initializing Event Segmentation Task
+Now setting up Event Segmentation Task
+Now running Event Segmentation Task
+[DEBUG] Key: space, Timestamp: 38.031222899997374, Movie status: 1, Clock time: 38.03134180000052
+[DEBUG] Key: space, Timestamp: 71.40763529999822, Movie status: 1, Clock time: 71.40780840000662
+[DEBUG] Key: space, Timestamp: 118.46194020000985, Movie status: 1, Clock time: 118.46205600000394
+[DEBUG] Key: space, Timestamp: 178.32591060000414, Movie status: 1, Clock time: 178.32601849999628
+[DEBUG] Key: space, Timestamp: 208.050046999997, Movie status: 1, Clock time: 208.05016359999718
+[DEBUG] Key: space, Timestamp: 249.48262310000428, Movie status: 1, Clock time: 249.48273920000065
+[DEBUG] Key: space, Timestamp: 318.05559489999723, Movie status: 1, Clock time: 318.0706302000035
+Now initializing Event Segmentation Task
+Now setting up Event Segmentation Task
+Now running Event Segmentation Task
+[DEBUG] Key: space, Timestamp: 20.550432499992894, Movie status: 1, Clock time: 20.56686069999705
+[DEBUG] Key: space, Timestamp: 56.929465499997605, Movie status: 1, Clock time: 56.929591599997366
+[DEBUG] Key: space, Timestamp: 95.57771060000232, Movie status: 1, Clock time: 95.57782459999726
+[DEBUG] Key: space, Timestamp: 146.71730709999974, Movie status: 1, Clock time: 146.71741509999265
+[DEBUG] Key: space, Timestamp: 156.64719689999765, Movie status: 1, Clock time: 156.6580219000025
+[DEBUG] Key: space, Timestamp: 203.62967480000225, Movie status: 1, Clock time: 203.62981579999905
+[DEBUG] Key: space, Timestamp: 227.1326260999922, Movie status: 1, Clock time: 227.1329992999963
+[DEBUG] Key: space, Timestamp: 276.08653079999203, Movie status: 1, Clock time: 276.08663669999805
+[DEBUG] Key: space, Timestamp: 308.1630198000057, Movie status: 1, Clock time: 308.1631353999983
+[DEBUG] Key: space, Timestamp: 341.21131949999835, Movie status: 1, Clock time: 341.2218702999962
+[DEBUG] Key: space, Timestamp: 367.94427890000225, Movie status: 1, Clock time: 367.9446586999984
+[DEBUG] Key: space, Timestamp: 435.1302022000018, Movie status: 1, Clock time: 435.1303096000047
+[DEBUG] Key: space, Timestamp: 464.2697002000059, Movie status: 1, Clock time: 464.2698317000031
+[DEBUG] Key: space, Timestamp: 570.0538465999998, Movie status: 1, Clock time: 570.0539686999982
+[DEBUG] Key: space, Timestamp: 602.730126399998, Movie status: 1, Clock time: 602.7302342000039
+[DEBUG] Key: space, Timestamp: 622.8299166999932, Movie status: 1, Clock time: 622.830185999992
+Now initializing Event Segmentation Task
+Now setting up Event Segmentation Task
+Now running Event Segmentation Task
+[DEBUG] Key: space, Timestamp: 39.24893580000207, Movie status: 1, Clock time: 39.249079700006405
+[DEBUG] Key: space, Timestamp: 115.07522359999712, Movie status: 1, Clock time: 115.0753687999968
+[DEBUG] Key: space, Timestamp: 178.525865100004, Movie status: 1, Clock time: 178.52598059999582
+[DEBUG] Key: space, Timestamp: 229.56680240000424, Movie status: 1, Clock time: 229.56732400000328
+[DEBUG] Key: space, Timestamp: 261.2431152000063, Movie status: 1, Clock time: 261.2435001999984
+[DEBUG] Key: space, Timestamp: 284.82795160000387, Movie status: 1, Clock time: 284.82902540000214
+[DEBUG] Key: space, Timestamp: 324.22674329999427, Movie status: 1, Clock time: 324.22713040000235
+Starting Free Association Task (after movies)...
+[SAVED] Free association data saved to C:\Users\Smallwood Lab\Documents\GitHub\Event-Segmentation-Battery\Tasks\taskScripts\..\free_association\013_freeAssoc_20251030_142737.csv
+Starting Lingering Self-Report (after movies)...
+[SAVED] Lingering response saved to: C:\Users\Smallwood Lab\Documents\GitHub\Event-Segmentation-Battery\Tasks\taskScripts\..\lingering_response\013_lms.mp4_linger.csv
+Success
+13.6910 	WARNING 	Monitor specification not found. Creating a temporary one...
+13.6986 	WARNING 	User requested fullscreen with size [1440  960], but screen is actually [2560, 1440]. Using actual size
+424.1624 	WARNING 	Speech-to-text recognition module not available (use command `pip install SpeechRecognition` to get it. Transcription will be unavailable.
+424.2017 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'pyo', 'pygame'] (in that order).
+583.4134 	WARNING 	76.51396496666712: Video catchup needed, advancing self._nextFrameT from 76.39999999999823 to 76.43333333333156
+583.4135 	WARNING 	76.5140568666684: Video catchup needed, advancing self._nextFrameT from 76.43333333333156 to 76.46666666666489
+583.6160 	WARNING 	76.7165117666591: Video catchup needed, advancing self._nextFrameT from 76.49999999999822 to 76.53333333333156
+583.6161 	WARNING 	76.71661066665547: Video catchup needed, advancing self._nextFrameT from 76.53333333333156 to 76.56666666666489
+583.6161 	WARNING 	76.71666446665768: Video catchup needed, advancing self._nextFrameT from 76.56666666666489 to 76.59999999999822
+583.6162 	WARNING 	76.7167131666647: Video catchup needed, advancing self._nextFrameT from 76.59999999999822 to 76.63333333333155
+583.6162 	WARNING 	76.71676126666716: Video catchup needed, advancing self._nextFrameT from 76.63333333333155 to 76.66666666666488
+1123.4292 	WARNING 	616.5296914666687: Video catchup needed, advancing self._nextFrameT from 616.4000000000967 to 616.43333333343
+1123.4293 	WARNING 	616.5298232666682: Video catchup needed, advancing self._nextFrameT from 616.43333333343 to 616.4666666667633
+1843.4328 	WARNING 	615.332624366667: Video catchup needed, advancing self._nextFrameT from 615.2000000000978 to 615.2333333334311
+1843.4329 	WARNING 	615.3328147666616: Video catchup needed, advancing self._nextFrameT from 615.2333333334311 to 615.2666666667644
+1843.4832 	WARNING 	615.3830474666611: Video catchup needed, advancing self._nextFrameT from 615.3000000000977 to 615.333333333431
+1963.3958 	WARNING 	34.080455700008315: Video catchup needed, advancing self._nextFrameT from 33.959999999999454 to 33.99999999999945
+1963.3958 	WARNING 	34.08049070001289: Video catchup needed, advancing self._nextFrameT from 33.99999999999945 to 34.03999999999945
+2023.4435 	WARNING 	94.12821020001138: Video catchup needed, advancing self._nextFrameT from 94.0400000000035 to 94.08000000000351
+2023.6375 	WARNING 	94.32215570000699: Video catchup needed, advancing self._nextFrameT from 94.24000000000353 to 94.28000000000354
+2263.4184 	WARNING 	334.10301950000576: Video catchup needed, advancing self._nextFrameT from 334.00000000002325 to 334.04000000002327
+2263.6070 	WARNING 	334.2916946000187: Video catchup needed, advancing self._nextFrameT from 334.0800000000233 to 334.1200000000233
+2263.6071 	WARNING 	334.29173170001013: Video catchup needed, advancing self._nextFrameT from 334.1200000000233 to 334.16000000002333
+2263.6071 	WARNING 	334.2917502000055: Video catchup needed, advancing self._nextFrameT from 334.16000000002333 to 334.20000000002335
+2263.6071 	WARNING 	334.29176440001174: Video catchup needed, advancing self._nextFrameT from 334.20000000002335 to 334.2400000000234
+2383.5412 	WARNING 	72.83176870000898: Video catchup needed, advancing self._nextFrameT from 72.60000000000015 to 72.64000000000016
+2383.5413 	WARNING 	72.83193000000028: Video catchup needed, advancing self._nextFrameT from 72.64000000000016 to 72.68000000000016
+2383.5413 	WARNING 	72.83197980000114: Video catchup needed, advancing self._nextFrameT from 72.68000000000016 to 72.72000000000017
+2383.5414 	WARNING 	72.8320231000107: Video catchup needed, advancing self._nextFrameT from 72.72000000000017 to 72.76000000000018
+2383.7140 	WARNING 	73.00458280000021: Video catchup needed, advancing self._nextFrameT from 72.80000000000018 to 72.84000000000019
+2383.7140 	WARNING 	73.00466360000428: Video catchup needed, advancing self._nextFrameT from 72.84000000000019 to 72.8800000000002
+2383.7141 	WARNING 	73.00470840001071: Video catchup needed, advancing self._nextFrameT from 72.8800000000002 to 72.9200000000002
+2383.7141 	WARNING 	73.00474940000277: Video catchup needed, advancing self._nextFrameT from 72.9200000000002 to 72.9600000000002
+2923.4457 	WARNING 	225.1957046000025: Video catchup needed, advancing self._nextFrameT from 225.0799999999895 to 225.1199999999895
+2923.5942 	WARNING 	225.34425520000514: Video catchup needed, advancing self._nextFrameT from 225.15999999998948 to 225.19999999998947
+2923.5943 	WARNING 	225.34432950000337: Video catchup needed, advancing self._nextFrameT from 225.19999999998947 to 225.23999999998946
+2923.5943 	WARNING 	225.34437370000524: Video catchup needed, advancing self._nextFrameT from 225.23999999998946 to 225.27999999998946
+3163.5681 	WARNING 	67.24438890001329: Video catchup needed, advancing self._nextFrameT from 67.1199999999993 to 67.1599999999993
+3163.5682 	WARNING 	67.24442800001998: Video catchup needed, advancing self._nextFrameT from 67.1599999999993 to 67.1999999999993
+3163.6514 	WARNING 	67.32768670000951: Video catchup needed, advancing self._nextFrameT from 67.23999999999931 to 67.27999999999932
+3403.5745 	WARNING 	307.25071900001785: Video catchup needed, advancing self._nextFrameT from 307.1200000000095 to 307.1600000000095
+3403.5745 	WARNING 	307.25080760000856: Video catchup needed, advancing self._nextFrameT from 307.1600000000095 to 307.20000000000954
+3403.6586 	WARNING 	307.33484140000655: Video catchup needed, advancing self._nextFrameT from 307.24000000000956 to 307.2800000000096
+4303.6106 	WARNING 	109.17182950000279: Video catchup needed, advancing self._nextFrameT from 109.04000000000585 to 109.08000000000585
+4303.6107 	WARNING 	109.17186420000507: Video catchup needed, advancing self._nextFrameT from 109.08000000000585 to 109.12000000000586

@@ -1,0 +1,40 @@
+METADATA:
+Experiment Seed,Subject
+1406073,011
+Index,Field Name,Value
+0,Experiment Seed,1406073
+1,Subject,011
+Time after setup,30.847080099978484
+Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID,Response_Key,Auxillary Data,Assoc Task
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,575.6176904999884
+Movie Task Start,575.6177296999958,,,,Event Segmentation Task,1,011,,,
+Movie Start,627.6761128999642,,,,Event Segmentation Task,1,011,,pulpFiction.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,1054.1852064999985
+Movie Task Start,1054.1852470999584,,,,Event Segmentation Task,1,011,,,
+Movie Start,1076.7766237999895,,,,Event Segmentation Task,1,011,,500Days.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,1795.0330513999797
+Movie Task Start,1795.0330926000024,,,,Event Segmentation Task,1,011,,,
+Movie Start,1802.6325974999927,,,,Event Segmentation Task,1,011,,backToFuture.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,2196.083724499971
+Movie Task Start,2196.0837636999786,,,,Event Segmentation Task,1,011,,,
+Movie Start,2199.5912080999697,,,,Event Segmentation Task,1,011,,12_years.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,2611.0543302999577
+Movie Task Start,2611.054369599966,,,,Event Segmentation Task,1,011,,,
+Movie Start,2615.9430264999974,,,,Event Segmentation Task,1,011,,prestige.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,3022.718844899966
+Movie Task Start,3022.718884199974,,,,Event Segmentation Task,1,011,,,
+Movie Start,3024.1351494999835,,,,Event Segmentation Task,1,011,,c4.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,3740.3681823999505
+Movie Task Start,3740.3682225999655,,,,Event Segmentation Task,1,011,,,
+Movie Start,3752.2778604999767,,,,Event Segmentation Task,1,011,,shawshank.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,4147.485215099994
+Movie Task Start,4147.485258199973,,,,Event Segmentation Task,1,011,,,
+Movie Start,4148.8694784999825,,,,Event Segmentation Task,1,011,,lms.mp4,

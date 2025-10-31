@@ -1,0 +1,8 @@
+METADATA:
+Experiment Seed,Subject
+2091169,test
+Index,Field Name,Value
+0,Experiment Seed,2091169
+1,Subject,test
+Time after setup,28.48404119996121
+Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID,Response_Key,Auxillary Data,Assoc Task
