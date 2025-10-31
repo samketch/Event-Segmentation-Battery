@@ -1,0 +1,40 @@
+METADATA:
+Experiment Seed,Subject
+6220209,005
+Index,Field Name,Value
+0,Experiment Seed,6220209
+1,Subject,005
+Time after setup,5.277333399979398
+Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID,Response_Key,Auxillary Data,Assoc Task
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,521.7912232999806
+Movie Task Start,521.7912613999797,,,,Event Segmentation Task,1,005,,,
+Movie Start,536.0626425999799,,,,Event Segmentation Task,1,005,,backToFuture.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,923.1207942999899
+Movie Task Start,923.1208340000012,,,,Event Segmentation Task,1,005,,,
+Movie Start,936.4813416000106,,,,Event Segmentation Task,1,005,,prestige.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,1329.7249337999965
+Movie Task Start,1329.7249725000001,,,,Event Segmentation Task,1,005,,,
+Movie Start,1333.1852007000125,,,,Event Segmentation Task,1,005,,shawshank.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,1712.6612655000063
+Movie Task Start,1712.66130159999,,,,Event Segmentation Task,1,005,,,
+Movie Start,1714.672389699961,,,,Event Segmentation Task,1,005,,500Days.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,2396.3724646999617
+Movie Task Start,2396.3725084000034,,,,Event Segmentation Task,1,005,,,
+Movie Start,2416.1128650999744,,,,Event Segmentation Task,1,005,,12_years.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,2797.9962305999943
+Movie Task Start,2797.996269700001,,,,Event Segmentation Task,1,005,,,
+Movie Start,2834.384369199979,,,,Event Segmentation Task,1,005,,lms.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,3509.402011899976
+Movie Task Start,3509.402050399978,,,,Event Segmentation Task,1,005,,,
+Movie Start,3524.5276840999722,,,,Event Segmentation Task,1,005,,c4.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,4464.394529599987
+Movie Task Start,4464.394567199983,,,,Event Segmentation Task,1,005,,,
+Movie Start,4474.031832600012,,,,Event Segmentation Task,1,005,,pulpFiction.mp4,
