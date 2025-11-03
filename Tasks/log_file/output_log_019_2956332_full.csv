@@ -1,0 +1,40 @@
+METADATA:
+Experiment Seed,Subject
+2956332,019
+Index,Field Name,Value
+0,Experiment Seed,2956332
+1,Subject,019
+Time after setup,5.081040799967013
+Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID,Response_Key,Auxillary Data,Assoc Task
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,541.3804402999813
+Movie Task Start,541.3804787999834,,,,Event Segmentation Task,1,019,,,
+Movie Start,558.501413799997,,,,Event Segmentation Task,1,019,,prestige.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,957.9604926999891
+Movie Task Start,957.9605343999574,,,,Event Segmentation Task,1,019,,,
+Movie Start,973.0111499999766,,,,Event Segmentation Task,1,019,,shawshank.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,1371.8677480999613
+Movie Task Start,1371.8677870999672,,,,Event Segmentation Task,1,019,,,
+Movie Start,1374.5317416999605,,,,Event Segmentation Task,1,019,,500Days.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,2072.0451277999673
+Movie Task Start,2072.0451715999516,,,,Event Segmentation Task,1,019,,,
+Movie Start,2075.4759741000016,,,,Event Segmentation Task,1,019,,c4.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,2782.27132369997
+Movie Task Start,2782.27140649996,,,,Event Segmentation Task,1,019,,,
+Movie Start,2787.6600893999566,,,,Event Segmentation Task,1,019,,backToFuture.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,3178.6182581999456
+Movie Task Start,3178.618296899949,,,,Event Segmentation Task,1,019,,,
+Movie Start,3181.98869009997,,,,Event Segmentation Task,1,019,,12_years.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,3578.319629399979
+Movie Task Start,3578.3196710999473,,,,Event Segmentation Task,1,019,,,
+Movie Start,3579.973207999952,,,,Event Segmentation Task,1,019,,pulpFiction.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,3972.635070899967
+Movie Task Start,3972.6351079999586,,,,Event Segmentation Task,1,019,,,
+Movie Start,3974.021231599967,,,,Event Segmentation Task,1,019,,lms.mp4,
