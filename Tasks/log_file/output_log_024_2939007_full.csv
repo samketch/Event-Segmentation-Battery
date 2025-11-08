@@ -1,0 +1,40 @@
+METADATA:
+Experiment Seed,Subject
+2939007,024
+Index,Field Name,Value
+0,Experiment Seed,2939007
+1,Subject,024
+Time after setup,6.892369500012137
+Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID,Response_Key,Auxillary Data,Assoc Task
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,472.59963130002143
+Movie Task Start,472.5996729999897,,,,Event Segmentation Task,1,024,,,
+Movie Start,485.9146905000089,,,,Event Segmentation Task,1,024,,pulpFiction.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,874.9757018000237
+Movie Task Start,874.9757400000235,,,,Event Segmentation Task,1,024,,,
+Movie Start,885.2118882000213,,,,Event Segmentation Task,1,024,,c4.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,1571.1154005000135
+Movie Task Start,1571.11544090003,,,,Event Segmentation Task,1,024,,,
+Movie Start,1616.699545099982,,,,Event Segmentation Task,1,024,,backToFuture.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,2005.5896996000083
+Movie Task Start,2005.5897433999926,,,,Event Segmentation Task,1,024,,,
+Movie Start,2032.971362899989,,,,Event Segmentation Task,1,024,,500Days.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,2722.852702000004
+Movie Task Start,2722.852743000025,,,,Event Segmentation Task,1,024,,,
+Movie Start,2729.8666193999816,,,,Event Segmentation Task,1,024,,shawshank.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,3110.5600149999955
+Movie Task Start,3110.5600540000014,,,,Event Segmentation Task,1,024,,,
+Movie Start,3119.1624130000127,,,,Event Segmentation Task,1,024,,prestige.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,3503.8554210999864
+Movie Task Start,3503.8554618000053,,,,Event Segmentation Task,1,024,,,
+Movie Start,3507.6903240000247,,,,Event Segmentation Task,1,024,,12_years.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,3895.2368868999765
+Movie Task Start,3895.2369442000054,,,,Event Segmentation Task,1,024,,,
+Movie Start,3901.689757300017,,,,Event Segmentation Task,1,024,,lms.mp4,
