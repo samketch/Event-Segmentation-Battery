@@ -1,0 +1,40 @@
+METADATA:
+Experiment Seed,Subject
+9493770,023
+Index,Field Name,Value
+0,Experiment Seed,9493770
+1,Subject,023
+Time after setup,16.18171919998713
+Timepoint,Time,Is_correct,Experience Sampling Question,Experience Sampling Response,Task,Task Iteration,Participant ID,Response_Key,Auxillary Data,Assoc Task
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,431.1435783999623
+Movie Task Start,431.1436152999522,,,,Event Segmentation Task,1,023,,,
+Movie Start,448.6796742999577,,,,Event Segmentation Task,1,023,,backToFuture.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,837.1600551999873
+Movie Task Start,837.1600915999734,,,,Event Segmentation Task,1,023,,,
+Movie Start,840.9522918000002,,,,Event Segmentation Task,1,023,,prestige.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,1221.240900099976
+Movie Task Start,1221.2409375999705,,,,Event Segmentation Task,1,023,,,
+Movie Start,1222.6158305999706,,,,Event Segmentation Task,1,023,,lms.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,1908.73766839999
+Movie Task Start,1908.73770659999,,,,Event Segmentation Task,1,023,,,
+Movie Start,1922.471538599988,,,,Event Segmentation Task,1,023,,shawshank.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,2304.652512300003
+Movie Task Start,2304.6525525999605,,,,Event Segmentation Task,1,023,,,
+Movie Start,2306.1670441000024,,,,Event Segmentation Task,1,023,,12_years.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,2694.721584999992
+Movie Task Start,2694.721630099986,,,,Event Segmentation Task,1,023,,,
+Movie Start,2696.1669569999794,,,,Event Segmentation Task,1,023,,pulpFiction.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,3079.930018099956
+Movie Task Start,3079.930052599986,,,,Event Segmentation Task,1,023,,,
+Movie Start,3081.2055497999536,,,,Event Segmentation Task,1,023,,500Days.mp4,
+EXPERIMENT DATA:,Event Segmentation Task
+Start Time,3764.7399742999696
+Movie Task Start,3764.7400128999725,,,,Event Segmentation Task,1,023,,,
+Movie Start,3766.0851124000037,,,,Event Segmentation Task,1,023,,c4.mp4,
