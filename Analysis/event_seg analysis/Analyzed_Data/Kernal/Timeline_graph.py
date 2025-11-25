@@ -9,9 +9,9 @@ from scipy.signal import find_peaks
 # =========================
 # Configuration
 # =========================
-MASTER_FILE   = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\master_data.csv"
-OUTPUT_DIR    = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\Analyzed_Data\Kernal\KDE_Graphs"
-VIDEO_DURATION = 22 * 60        # 22 minutes = 1320 seconds
+MASTER_FILE   = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Analysis\event_seg analysis\master_data.csv"
+OUTPUT_DIR    = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Analysis\event_seg analysis\Analyzed_Data\Kernal\KDE_Graphs"
+VIDEO_DURATION = 6 * 60        # 22 minutes = 1320 seconds
 DEDUP_WINDOW   = 0.5            # remove double taps within this window
 KERNEL_SD      = 2.5            # Gaussian kernel width (σ in seconds)
 PERCENTILE_CUTOFF = 90          # threshold for consensus peaks (optional)
@@ -46,6 +46,7 @@ df_clean = pd.DataFrame(dedup_rows)
 
 # ---- Process per video ----
 for video, g in df_clean.groupby("VideoName"):
+    print(video)
     times = g["Time"].values
     if times.size == 0:
         print(f"No data for {video}")
@@ -56,6 +57,14 @@ for video, g in df_clean.groupby("VideoName"):
     kde = gaussian_kde(times, bw_method=bw)
 
     # Evaluate KDE across full video duration
+    if video == "500Days.mp4":
+        VIDEO_DURATION = 11 * 60
+    elif video == "lms.mp4":
+        VIDEO_DURATION = 11 * 60
+    elif video == "c4.mp4":
+        VIDEO_DURATION = 11 * 60
+    else: 
+        VIDEO_DURATION = 6 *60
     grid = np.linspace(0, VIDEO_DURATION, VIDEO_DURATION)  # 1 sample per second
     density = kde(grid)
 

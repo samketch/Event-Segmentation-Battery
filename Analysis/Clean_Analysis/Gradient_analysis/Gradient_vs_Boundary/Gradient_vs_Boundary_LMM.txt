@@ -1,0 +1,19 @@
+              Mixed Linear Model Regression Results
+==================================================================
+Model:               MixedLM  Dependent Variable:  BoundaryDensity
+No. Observations:    253      Method:              ML             
+No. Groups:          8        Scale:               0.0000         
+Min. group size:     27       Log-Likelihood:      inf            
+Max. group size:     40       Converged:           Yes            
+Mean group size:     31.6                                         
+------------------------------------------------------------------
+                  Coef.  Std.Err.   z   P>|z|   [0.025     0.975] 
+------------------------------------------------------------------
+Intercept         0.000 16994.150 0.000 1.000 -33307.923 33307.923
+Mean_gradient_1_z 0.000     0.000 0.426 0.670     -0.000     0.000
+Mean_gradient_2_z 0.000     0.000 0.398 0.691     -0.000     0.000
+Mean_gradient_3_z 0.000     0.000 1.630 0.103     -0.000     0.001
+Mean_gradient_4_z 0.000     0.000 0.464 0.643     -0.000     0.000
+Mean_gradient_5_z 0.000     0.000 0.867 0.386     -0.000     0.000
+Group Var         0.000                                           
+==================================================================

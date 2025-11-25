@@ -22,9 +22,16 @@ import matplotlib.pyplot as plt
 # =========================
 # Config
 # =========================
-VISCHANGE_DIR = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\Analyzed_Data\Neural_model\Frame_Embeddings"
-OUTPUT_DIR = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\Analyzed_Data\Neural_model\Frame_Embeddings\Change_plots"
-VIDEOS = ["friends1", "friends2", "friends3"]  # base names only
+VISCHANGE_DIR = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Analysis\event_seg analysis\Analyzed_Data\Neural_model\Frame_Embeddings"
+OUTPUT_DIR = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Analysis\event_seg analysis\Analyzed_Data\Neural_model\Frame_Embeddings\Change_plots"
+
+VIDEO_DIR = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Tasks\taskScripts\resources\Movie_Task\videos"
+VIDEOS = [
+    f for f in os.listdir(VIDEO_DIR)
+    if f.lower().endswith((".mp4", ".mov", ".avi", ".mkv"))
+    and f.lower() != "practice_clip.mp4"
+]
+
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -32,6 +39,7 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 # Main loop
 # =========================
 for base in VIDEOS:
+    base = base.replace(".mp4", "")
     csv_path = os.path.join(VISCHANGE_DIR, f"{base}_visualchange.csv")
     if not os.path.exists(csv_path):
         print(f"Missing: {csv_path}")

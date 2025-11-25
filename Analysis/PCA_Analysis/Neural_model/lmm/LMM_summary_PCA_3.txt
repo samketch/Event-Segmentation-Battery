@@ -1,0 +1,17 @@
+                Mixed Linear Model Regression Results
+=====================================================================
+Model:                 MixedLM     Dependent Variable:     PCA_z     
+No. Observations:      2391        Method:                 REML      
+No. Groups:            226         Scale:                  0.7020    
+Min. group size:       9           Log-Likelihood:         -3165.5222
+Max. group size:       12          Converged:              Yes       
+Mean group size:       10.6                                          
+---------------------------------------------------------------------
+                           Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+---------------------------------------------------------------------
+Intercept                  -0.000    0.040 -0.009 0.993 -0.078  0.077
+VisualChange_z              0.058    0.018  3.195 0.001  0.022  0.093
+Group Var                   0.287    0.041                           
+Group x VisualChange_z Cov -0.010    0.014                           
+VisualChange_z Var          0.002    0.013                           
+=====================================================================

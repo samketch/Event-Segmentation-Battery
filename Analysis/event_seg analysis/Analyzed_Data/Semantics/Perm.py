@@ -8,9 +8,9 @@ import glob
 # =========================
 # Config
 # =========================
-SEMANTIC_DIR = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\Analyzed_Data\Semantics"
-KDE_DIR      = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\Analyzed_Data\Kernal\KDE_Results"
-VIDEO_DURATION = 22 * 60  # 22 minutes
+SEMANTIC_DIR = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Analysis\event_seg analysis\Analyzed_Data\Semantics"
+KDE_DIR      = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Analysis\event_seg analysis\Analyzed_Data\Kernal\KDE_Results"
+VIDEO_DURATION = 6 * 60  # 22 minutes
 N_PERM = 1000             # number of permutations
 
 BASE_OUT = os.path.join(SEMANTIC_DIR, "permutation")
@@ -26,10 +26,37 @@ results = []
 
 semantic_files = glob.glob(os.path.join(SEMANTIC_DIR, "*_aligned_semantic.csv"))
 
+
 for sem_file in semantic_files:
     base = os.path.basename(sem_file)
-    video_id = base.split("_")[0]  # e.g., "friends1"
+    video_id = base.split("_")[0] 
+    print(video_id)
+    if "12" in video_id:
+        video_id = "12 years_6m.mp4"
+    elif "500Days" in video_id:
+        video_id = "Movie Task-summer"
+        VIDEO_DURATION = 11*60
+    elif "backToFuture" in video_id:
+        video_id = "back to the future_6m.mp4"
+    elif "c4" in video_id:
+        video_id = "Movie Task-c4"
+        VIDEO_DURATION = 11*60
+    elif "lms" in video_id:
+        video_id = "Movie Task-lms"
+        VIDEO_DURATION = 11*60
+    elif "prestige" in video_id:
+        video_id = "the_prestige_6m.mp4"
+    elif "pulpFiction" in video_id:
+        video_id = "pulp_fiction_6m.mp4"
+    elif "shawshank" in video_id:
+        video_id = "shawshank clip_6m.mp4"
+    else: 
+        print(f'cannot find {video_id}')
+        
+    
+
     kde_file = os.path.join(KDE_DIR, f"{video_id}_kde_timeseries.csv")
+    
 
     if not os.path.exists(kde_file):
         print(f"Skipping {video_id}: KDE file not found at {kde_file}")

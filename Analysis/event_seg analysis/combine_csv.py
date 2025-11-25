@@ -2,10 +2,10 @@ import os
 import pandas as pd
 
 # Folder containing all corrected event segmentation CSVs
-EVENT_SEG_FOLDER = r"C:\Users\Smallwood Lab\friends-event-segmentation\Tasks\event_seg\Processed_data"
+EVENT_SEG_FOLDER = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Tasks\event_seg\processed_data"
 
 # Output path for the master file
-OUTPUT_FILE = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\master_data.csv"
+OUTPUT_FILE = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Analysis\event_seg analysis\master_data.csv"
 
 def merge_eventseg(folder: str, output_file: str) -> None:
     all_dfs = []

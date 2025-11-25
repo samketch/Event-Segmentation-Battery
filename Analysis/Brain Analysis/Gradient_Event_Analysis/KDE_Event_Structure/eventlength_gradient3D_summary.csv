@@ -1,0 +1,18 @@
+# Spearman correlations (length vs each gradient)
+gradient,rho_length_vs_meanpos,p_value
+gradient_1,,
+gradient_2,,
+gradient_3,,
+
+# Multiple regression (standardized betas predicting event length)
+gradient,beta,p_value
+Intercept,-3.7730235602495554e-17,0.9999999999999998
+Gradient 1,0.0,
+Gradient 2,0.0,
+Gradient 3,0.0,
+
+# 3D correlation vector (direction of length increase in gradient space)
+axis,correlation,normalized_direction,model_R2
+gradient_1,,,-2.220446049250313e-16
+gradient_2,,,
+gradient_3,,,

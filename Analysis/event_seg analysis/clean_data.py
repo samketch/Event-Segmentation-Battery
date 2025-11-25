@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 # Path to your event_seg folder
-event_seg_folder = r"C:\Users\Smallwood Lab\friends-event-segmentation\Tasks\event_seg"
+event_seg_folder = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Tasks\event_seg"
 processed_folder = os.path.join(event_seg_folder, "processed_data")
 
 # Make sure processed_data folder exists
@@ -19,7 +19,7 @@ for file in os.listdir(event_seg_folder):
             df_clean = df[df["BoundaryTime(s)"] >= 0].copy()
 
             # Round all times to 3 decimal places
-            df_clean["BoundaryTime(s)"] = df_clean["BoundaryTime(s)"].round(3)
+            #df_clean["BoundaryTime(s)"] = df_clean["BoundaryTime(s)"].round(3)
 
             # Add "_processed" to the filename
             base, ext = os.path.splitext(file)

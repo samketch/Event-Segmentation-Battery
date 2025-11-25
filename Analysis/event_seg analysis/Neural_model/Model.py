@@ -174,7 +174,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 # Config
 # =========================
 BOUNDARY_DIR = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Analysis\event_seg analysis\Analyzed_Data\Kernal\KDE_Results"
-OUTPUT_DIR = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Analysis\event_seg analysis\Neural_model\Frame_Embeddings"
+OUTPUT_DIR = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Analysis\event_seg analysis\Analyzed_Data\Neural_model\Frame_Embeddings"
 
 # Automatically collect all videos except "practice_clip.mp4"
 VIDEO_DIR = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Tasks\taskScripts\resources\Movie_Task\videos"

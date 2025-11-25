@@ -1,0 +1,8 @@
+
+=== GLOBAL KDE STABILITY ===
+Participants: 35 across 8 movies
+Iterations: 100
+Mean split-half r: 0.845 ± 0.01
+Median peak timing error: 1.00 s
+Mean Jaccard overlap: 0.437
+=============================

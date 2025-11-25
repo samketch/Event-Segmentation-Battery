@@ -1,0 +1,18 @@
+# Spearman correlations (length vs first 3 features)
+feature,rho_length_vs_meanpos,p_value
+Mean_PCA_1,-0.023809523809523815,0.9553740118158807
+Mean_PCA_2,0.6904761904761906,0.057990318164572716
+Mean_PCA_3,0.38095238095238104,0.35181255311756476
+
+# Multiple regression (standardized betas predicting event length)
+term,beta,p_value
+Intercept,0.0,1.0
+Mean_PCA_1,0.14872073844538863,0.6018819854681874
+Mean_PCA_2,0.7687409605720449,0.0358635325893447
+Mean_PCA_3,0.719865029565729,0.05687481523169944
+
+# 3D correlation vector (direction of length increase in feature space)
+axis,correlation,normalized_direction,model_R2
+Mean_PCA_1,-0.12560976368371576,-0.1643053307943933,0.7725156077688075
+Mean_PCA_2,0.5931182495167255,0.7758353119142997,
+Mean_PCA_3,0.46570131614219923,0.6091660915213407,

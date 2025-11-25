@@ -28,9 +28,9 @@ import glob
 # =========================
 # Config
 # =========================
-VISCHANGE_DIR = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\Analyzed_Data\Neural_model\Frame_Embeddings"
-KDE_DIR       = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\Analyzed_Data\Kernal\KDE_Results"
-OUTPUT_DIR = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\Analyzed_Data\Neural_model\Frame_Embeddings"
+VISCHANGE_DIR = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Analysis\event_seg analysis\Neural_model\Analyzed_Data\Frame_Embeddings"
+KDE_DIR       = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Analysis\event_seg analysis\Analyzed_Data\Kernal\KDE_Results"
+OUTPUT_DIR = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Analysis\event_seg analysis\Analyzed_Data\Neural_model\perm"
 VIDEO_DURATION = 22 * 60  # 22 minutes
 N_PERM = 1000             # number of permutations
 
@@ -50,6 +50,25 @@ visual_files = glob.glob(os.path.join(VISCHANGE_DIR, "*_visualchange.csv"))
 for vis_file in visual_files:
     base = os.path.basename(vis_file)
     video_id = base.split("_")[0]  # e.g., "friends1"
+    if video_id == "12":
+        video_id = "12 years_6m"
+    elif video_id == "500Days":
+        video_id = "Movie Task-summer"
+    elif video_id == "backToFuture":
+        video_id = "back to the future_6m"
+    elif video_id == "c4":
+        video_id = "Movie Task-c4"
+    elif video_id == "lms":
+        video_id = "Movie Task-lms"
+    elif video_id == "prestige":
+        video_id = "the_prestige_6m"
+    elif video_id == "pulpFiction":
+        video_id = "pulp_fiction_6m"
+    elif video_id == "shawshank":
+        video_id = "shawshank clip_6m"
+    print(video_id)
+
+    kde_file = os.path.join(KDE_DIR, f"{video_id}_kde_timeseries.csv")
     kde_file = os.path.join(KDE_DIR, f"{video_id}_kde_timeseries.csv")
 
     if not os.path.exists(kde_file):

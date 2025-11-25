@@ -41,10 +41,10 @@ from sklearn.metrics.pairwise import cosine_similarity
 # =========================
 
 # Folder containing transcript CSVs (change to path of the output directory used in extract_diologue.py)
-TRANSCRIPT_DIR = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\Analyzed_Data\Transcripts"
+TRANSCRIPT_DIR = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Analysis\event_seg analysis\Analyzed_Data\Transcripts"
 
 # Folder to save output semantic results (CSV + plots) (change to your desired output folder)
-OUTPUT_DIR     = r"C:\Users\Smallwood Lab\friends-event-segmentation\Analysis\event_seg analysis\Analyzed_Data\Semantics"
+OUTPUT_DIR     = r"C:\Users\Smallwood Lab\Documents\Event-Segmentation-Battery\Analysis\event_seg analysis\Analyzed_Data\Semantics"
 
 # Windowing parameters
 WINDOW_SIZE    = 30    # Size of each time window in seconds
@@ -100,6 +100,8 @@ def process_file(file):
       4) Save CSV + plot
     """
     print(f"Processing {file} …")
+    if file == "practice_clip_aligned.csv":
+        return
     df = pd.read_csv(os.path.join(TRANSCRIPT_DIR, file))
     
     # Check that required columns exist

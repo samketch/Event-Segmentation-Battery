@@ -1,0 +1,22 @@
+{
+    "master_timecourse_csv": "C:\\Users\\Smallwood Lab\\Documents\\Event-Segmentation-Battery\\Analysis\\Master_Data\\Master_Timecourse_All.csv",
+    "output_root": "C:\\Users\\Smallwood Lab\\Documents\\Event-Segmentation-Battery\\Analysis\\Brain Analysis\\Gradient_Event_Analysis",
+    "gradient_cols": [
+        "Mean_gradient_1",
+        "Mean_gradient_2",
+        "Mean_gradient_3",
+        "Mean_gradient_4",
+        "Mean_gradient_5"
+    ],
+    "pca_cols": [
+        "Mean_PCA_1",
+        "Mean_PCA_2",
+        "Mean_PCA_3",
+        "Mean_PCA_4",
+        "Mean_PCA_5"
+    ],
+    "sampling_rate": 1.0,
+    "speed_threshold": 0.9,
+    "smoothing_sigma": 1,
+    "save_plots": true
+}
